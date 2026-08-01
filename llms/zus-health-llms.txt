@@ -1,0 +1,852 @@
+# Zus Health Documentation
+
+> Zus is a next-generation shared health data platform bringing information speed to healthcare.
+
+## Guides
+- [Introduction to Zus](https://docs.zushealth.com/docs/intro-to-zus.md)
+- [Architecture](https://docs.zushealth.com/docs/architecture.md)
+- [M2M App Client Setup](https://docs.zushealth.com/docs/m2m-application-setup.md)
+- [Creating Patients](https://docs.zushealth.com/docs/creating-patients.md)
+- [One Time Querying Patients](https://docs.zushealth.com/docs/one-time-querying-patients.md)
+- [Writing Data Back to Zus](https://docs.zushealth.com/docs/writing-data-back-to-zus.md)
+- [Retrieving FHIR Data](https://docs.zushealth.com/docs/retrieving-fhir-data.md)
+- [ZAP Basics](https://docs.zushealth.com/docs/zap-basics.md)
+- [Accessing the ZAP](https://docs.zushealth.com/docs/accessing-the-zap.md)
+- [Patient Matching](https://docs.zushealth.com/docs/patient-matching.md)
+- [Data Sharing](https://docs.zushealth.com/docs/data-sharing.md)
+- [Patient Opt Out](https://docs.zushealth.com/docs/patient-opt-out.md)
+- [Data Enrichment](https://docs.zushealth.com/docs/data-enrichment.md)
+- [Data Summarization: Zus Lens](https://docs.zushealth.com/docs/lens.md)
+- [Condition Lenses](https://docs.zushealth.com/docs/condition-lenses.md)
+- [Encounter Lens](https://docs.zushealth.com/docs/encounter-lens.md)
+- [Medication Lenses](https://docs.zushealth.com/docs/medication-lenses.md)
+- [Transition of Care Lens](https://docs.zushealth.com/docs/transition-of-care-lens.md)
+- [Creating Users](https://docs.zushealth.com/docs/creating-users.md)
+- [Creating App Clients](https://docs.zushealth.com/docs/creating-app-clients.md)
+- [User Authentication](https://docs.zushealth.com/docs/user-authentication.md)
+- [SSO for Google Workspace](https://docs.zushealth.com/docs/sso-for-google-workspace.md)
+- [SSO for Azure Active Directory](https://docs.zushealth.com/docs/sso-for-azure-active-directory.md)
+- [SSO for Okta](https://docs.zushealth.com/docs/sso-for-okta.md)
+- [Roles and Permissions](https://docs.zushealth.com/docs/roles-and-permissions.md)
+- [Network Requirements](https://docs.zushealth.com/docs/network-requirements.md)
+- [TEFCA Concepts](https://docs.zushealth.com/docs/tefca-concepts.md)
+- [Clinical Data Contribution Policy](https://docs.zushealth.com/docs/clinical-data-contribution-policy.md)
+- [Delegation of Authority](https://docs.zushealth.com/docs/delegation-of-authority.md)
+- [EHR Networks](https://docs.zushealth.com/docs/ehr-networks.md)
+- [Pharmacy Network](https://docs.zushealth.com/docs/pharmacy-network.md)
+- [ADT Networks](https://docs.zushealth.com/docs/adt-networks.md)
+- [Lab Networks](https://docs.zushealth.com/docs/lab-networks.md)
+- [Enrolling & Refreshing](https://docs.zushealth.com/docs/enrolling-your-patients.md)
+- [One-Time Queries](https://docs.zushealth.com/docs/one-time-queries.md)
+- [Automatic Patient Enrollment via EHR Integrations](https://docs.zushealth.com/docs/automatic-patient-enrollment-via-ehr-integrations.md)
+- [Enrollment via Flat File](https://docs.zushealth.com/docs/enrollment-via-flat-file.md): Zus supports managing patient enrollments via flat file (CSV) upload. This option enables customers to create new patients, update demographics, and enroll or unenroll patients in subscription packages without making direct API calls. This approach is useful for organizations that prefer batch operations or have existing systems that can easily generate CSV exports.
+- [Intelligent Refresh](https://docs.zushealth.com/docs/intelligent-refresh.md)
+- [Getting Started](https://docs.zushealth.com/docs/getting-started-with-the-zap.md)
+- [Embedding the ZAP](https://docs.zushealth.com/docs/embedding-the-zap.md): Embed the Zus Aggregated Profile in your own application!
+- [Supported Platforms & Web Browsers](https://docs.zushealth.com/docs/supported-browsers.md)
+- [Clinical Guide](https://docs.zushealth.com/docs/clinical-guide.md): Go deep on the functionality of the ZAP.
+- [EHR Integrations General Concepts](https://docs.zushealth.com/docs/ehr-integrations.md)
+- [athenahealth](https://docs.zushealth.com/docs/athenahealth.md)
+- [Canvas Medical](https://docs.zushealth.com/docs/zus-for-canvas.md)
+- [eClinicalWorks (eCW)](https://docs.zushealth.com/docs/eclinicalworks.md)
+- [Elation Health](https://docs.zushealth.com/docs/elation-health.md)
+- [Healthie](https://docs.zushealth.com/docs/zus-for-healthie.md)
+- [Salesforce](https://docs.zushealth.com/docs/salesforce.md)
+- [Epic](https://docs.zushealth.com/docs/epic.md)
+- [Medplum](https://docs.zushealth.com/docs/medplum.md)
+- [Ingesting Documents into Zus](https://docs.zushealth.com/docs/ingesting-documents.md)
+- [Sharing Data on Patient Outreach](https://docs.zushealth.com/docs/sharing-data-on-patient-outreach.md)
+- [Restricted Data](https://docs.zushealth.com/docs/restricted-data.md)
+- [Adding Appointments to Zus](https://docs.zushealth.com/docs/adding-appointments-to-zus.md)
+- [FHIR API](https://docs.zushealth.com/docs/fhir-api.md)
+- [FHIR REST API Capabilities](https://docs.zushealth.com/docs/fhir-rest-api-capabilities.md)
+- [FHIRplace](https://docs.zushealth.com/docs/fhirplace.md)
+- [GraphQL API](https://docs.zushealth.com/docs/graphql-api.md)
+- [Zushooks](https://docs.zushealth.com/docs/zushooks.md)
+- [FHIR Relational Data Marts](https://docs.zushealth.com/docs/data-marts.md)
+- [Known Issues](https://docs.zushealth.com/docs/known-issues-relational-schema.md)
+- [FHIR Relational Schema V2 Data Dictionary](https://docs.zushealth.com/docs/fhir-relational-schema-v2-data-dictionary.md)
+- [FHIR Relational Schema V2 Schema Diagrams](https://docs.zushealth.com/docs/fhir-relational-schema-v2-diagrams.md)
+- [Data Mart Access Options](https://docs.zushealth.com/docs/data-mart-access-options.md)
+- [Access via Snowflake (private listing)](https://docs.zushealth.com/docs/access-via-snowflake-private-listing.md)
+- [Access via Snowflake (secure share)](https://docs.zushealth.com/docs/access-via-snowflake-secure-share.md)
+- [Access via Snowflake (reader account)](https://docs.zushealth.com/docs/access-via-snowflake-reader-account.md)
+- [Access via Databricks](https://docs.zushealth.com/docs/access-via-databricks.md)
+- [Bulk export to cloud storage](https://docs.zushealth.com/docs/bulk-export-to-cloud-storage.md)
+- [Export via external ETL tools](https://docs.zushealth.com/docs/export-via-external-etl-tools.md)
+- [Import into Tuva](https://docs.zushealth.com/docs/import-into-tuva.md)
+- [Data Dictionary](https://docs.zushealth.com/docs/data-dictionary.md)
+- [Schema Diagrams](https://docs.zushealth.com/docs/schema-diagrams.md): Entity relationship diagrams for FHIR resource types available in the data mart schema
+- [Query Library](https://docs.zushealth.com/docs/query-library.md)
+- [Understanding Zus data](https://docs.zushealth.com/docs/understanding-zus-data.md)
+- [Analyzing patient demographics](https://docs.zushealth.com/docs/analyzing-patient-demographics.md)
+- [Evaluating population health](https://docs.zushealth.com/docs/evaluating-population-health.md)
+- [Identifying high risk patients](https://docs.zushealth.com/docs/identifying-high-risk-patients.md)
+- [Identifying care gaps](https://docs.zushealth.com/docs/identifying-care-gaps.md)
+- [FHIR Relational Schema v1 to v2 Migration Guide](https://docs.zushealth.com/docs/fhir-relational-schema-v1-to-v2-migration-guide.md)
+- [Risk Adjustment Overview](https://docs.zushealth.com/docs/risk-overview.md)
+- [Risk Adjustment Data Marts](https://docs.zushealth.com/docs/risk-data-marts.md)
+- [Risk Adjustment FHIR Models](https://docs.zushealth.com/docs/risk-fhir-models.md)
+- [Payer Risk Gap CSV Import](https://docs.zushealth.com/docs/payer-risk-gap-csv-import.md)
+- [FAQs](https://docs.zushealth.com/docs/faqs.md)
+
+## API Reference
+- [General](https://docs.zushealth.com/reference/general.md)
+- [Create an app client](https://docs.zushealth.com/reference/create-app-client.md): Creates a client for applications to make calls to the Auth Service API.
+- [List all app clients](https://docs.zushealth.com/reference/get-app-clients.md): Lists all app clients.
+- [Rotate app client secret](https://docs.zushealth.com/reference/rotate-app-client-secret-1.md): Rotates (ie. changes) the app client secret.
+- [Updates an app client](https://docs.zushealth.com/reference/update-app-client.md): Updates an app client, updating all fields. Any fields omitted in the request body will be blanked in the existing app client object.
+- [Modifies an app client](https://docs.zushealth.com/reference/modify-app-client-1.md): Partially updates a app client, only updating fields specified in the request body. Any fields omitted in the request body will not be changed from their existing values.
+- [Get an app client by ID](https://docs.zushealth.com/reference/get-app-client-by-id.md): Get an app client by ID.
+- [Delete an app client by ID](https://docs.zushealth.com/reference/delete-app-client.md): Delete an app client by ID.
+- [Get an app client's settings by ID](https://docs.zushealth.com/reference/get-app-client-settings-by-id-1.md): Get an app client's settings by ID.
+- [Modifies an app client's settings by ID](https://docs.zushealth.com/reference/modify-app-client-settings-1.md): Partially updates app client settings, only updating fields specified in the request body. Any fields omitted in the request body will not be changed from their existing values.
+- [List all roles](https://docs.zushealth.com/reference/get-roles.md): Lists all managed roles and roles owned by the user's builder.
+- [Get role details](https://docs.zushealth.com/reference/get-role-by-id.md): Get details about a single role by ID.
+- [Create a user](https://docs.zushealth.com/reference/create-user.md): Creates a user.
+- [List all users](https://docs.zushealth.com/reference/get-users.md): Lists all users.
+- [Updates a user](https://docs.zushealth.com/reference/update-user.md): Updates a user, updating all fields. Any fields omitted in the request body will be blanked in the existing user object.
+- [Modifies a user](https://docs.zushealth.com/reference/modify-user-1.md): Partially updates a user, only updating fields specified in the request body. Any fields omitted in the request body will not be changed from their existing values.
+- [Get a user by ID](https://docs.zushealth.com/reference/get-user-by-id.md): Get a user by ID.
+- [Delete a user by ID](https://docs.zushealth.com/reference/delete-user.md): Delete a user by ID.
+- [Get the calling user](https://docs.zushealth.com/reference/get-calling-user.md): Get the calling user.
+- [Token Exchange](https://docs.zushealth.com/reference/exchange-token-1.md): Exchanges an OIDC-compliant ID token from a user's identity provider for a Zus access token that can be used to make API calls
+- [Token Proxy](https://docs.zushealth.com/reference/proxy-token.md): Allows an authorized user or app client to retrieve an access token for a user their builder can access. This feature requires additional permissions. Please [contact Zus](https://docs.zushealth.com/page/contact-support) if interested.
+- [Start a job to retrieve information about the patient](https://docs.zushealth.com/reference/post_patient-history-jobs.md): This endpoint takes a reference for a patient that is stored in the FHIR server and starts a job that will asynchronously collect, parse and store on the server all documents that are related to this patient that are available on the external sources.
+- [Get patient history job list](https://docs.zushealth.com/reference/get_patient-history-jobs.md): This endpoint retrieves patient history jobs info filtered by provided parameters and ordered descending by created date.
+- [Check the status of a job](https://docs.zushealth.com/reference/get_patient-history-jobs-job-id.md): This endpoint returns information about the given job, including current status.
+- [Delete a scheduled job](https://docs.zushealth.com/reference/delete_patient-history-jobs-job-id.md): This endpoint deletes a scheduled patient history job.
+- [EnrollmentStatuses](https://docs.zushealth.com/reference/enrollmentstatuses.md)
+- [List enrollment statuses](https://docs.zushealth.com/reference/get_enrollment-statuses.md): The enrollment status is a linkage between a ZAP subscription package and a patient. If a status object does not exist for a patient/package combination, which indicates that the patient is not enrolled in that package.
+- [Create a new enrollment](https://docs.zushealth.com/reference/post_enrollment-statuses.md): Enroll a patient in a package.
+- [Retrieve a specific package enrollment status](https://docs.zushealth.com/reference/get_enrollment-statuses-patientid-packageid.md): This endpoint can be used to retrieve a specific package enrollment status using the enrollment status id. Enrollment status id is a combination of the patient ID and the package ID in the following format "patientId:packageId"
+- [Delete an existing enrollment](https://docs.zushealth.com/reference/delete_enrollment-statuses-patientid-packageid.md): This endpoint can be used to hard delete a specific package enrollment status using the enrollment status id. Enrollment status id is a combination of the patient ID and the package ID in the following format "patientId:packageId"
+- [Update an existing enrollment](https://docs.zushealth.com/reference/patch_enrollment-statuses-patientid-packageid.md): This endpoint can be used to update a specific package enrollment using the enrollment status id. Enrollment status id is a combination of the patient ID and the package ID in the following format "patientId:packageId"
+- [List all available packages](https://docs.zushealth.com/reference/get_packages.md): A "package" defines the breadth and refresh frequency of clinical data within a patient's Zus Aggregate Profile (ZAP).
+- [Retrieve details for a specific package.](https://docs.zushealth.com/reference/get_packages-packageid.md)
+- [Upload a document to be ingested into Zus as FHIR resources.](https://docs.zushealth.com/reference/post_upload.md): Use this endpoint to upload clinical documents to be transformed into FHIR resources and stored in Zus. Accepts PDF and CCDA formats.
+- [List Accounts](https://docs.zushealth.com/reference/fhir-search-account.md): Search for Account resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST Account resource](https://docs.zushealth.com/reference/fhir-post-account.md): Create a new Account resource.
+- [DELETE Account resource](https://docs.zushealth.com/reference/fhir-delete-account.md): Delete an Account resource.
+- [GET Account by FHIR ID](https://docs.zushealth.com/reference/fhir-get-account.md): Retrieve an Account resource. The latest version of the resource is returned.
+- [PATCH Account resource](https://docs.zushealth.com/reference/fhir-patch-account.md): Update a part of an Account resource.
+- [PUT Account resource](https://docs.zushealth.com/reference/fhir-put-account.md): Update an entire Account resource with new resource definition.
+- [POST ActivityDefinition resource](https://docs.zushealth.com/reference/fhir-post-activitydefinition.md): Create a new ActivityDefinition resource.
+- [DELETE ActivityDefinition resource](https://docs.zushealth.com/reference/fhir-delete-activitydefinition.md): Delete an ActivityDefinition resource.
+- [GET ActivityDefinition by FHIR ID](https://docs.zushealth.com/reference/fhir-get-activitydefinition.md): Retrieve an ActivityDefinition resource. The latest version of the resource is returned.
+- [PATCH ActivityDefinition resource](https://docs.zushealth.com/reference/fhir-patch-activitydefinition.md): Update a part of an ActivityDefinition resource.
+- [PUT ActivityDefinition resource](https://docs.zushealth.com/reference/fhir-put-activitydefinition.md): Update an entire ActivityDefinition resource with new resource definition.
+- [List AdverseEvents](https://docs.zushealth.com/reference/fhir-search-adverseevent.md): Search for AdverseEvent resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST AdverseEvent resource](https://docs.zushealth.com/reference/fhir-post-adverseevent.md): Create a new AdverseEvent resource.
+- [DELETE AdverseEvent resource](https://docs.zushealth.com/reference/fhir-delete-adverseevent.md): Delete an AdverseEvent resource.
+- [GET AdverseEvent by FHIR ID](https://docs.zushealth.com/reference/fhir-get-adverseevent.md): Retrieve an AdverseEvent resource. The latest version of the resource is returned.
+- [PATCH AdverseEvent resource](https://docs.zushealth.com/reference/fhir-patch-adverseevent.md): Update a part of an AdverseEvent resource.
+- [PUT AdverseEvent resource](https://docs.zushealth.com/reference/fhir-put-adverseevent.md): Update an entire AdverseEvent resource with new resource definition.
+- [List AllergyIntolerances](https://docs.zushealth.com/reference/fhir-search-allergyintolerance.md): Search for AllergyIntolerance resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST AllergyIntolerance resource](https://docs.zushealth.com/reference/fhir-post-allergyintolerance.md): Create a new AllergyIntolerance resource.
+- [DELETE AllergyIntolerance resource](https://docs.zushealth.com/reference/fhir-delete-allergyintolerance.md): Delete an AllergyIntolerance resource.
+- [GET AllergyIntolerance by FHIR ID](https://docs.zushealth.com/reference/fhir-get-allergyintolerance.md): Retrieve an AllergyIntolerance resource. The latest version of the resource is returned.
+- [PATCH AllergyIntolerance resource](https://docs.zushealth.com/reference/fhir-patch-allergyintolerance.md): Update a part of an AllergyIntolerance resource.
+- [PUT AllergyIntolerance resource](https://docs.zushealth.com/reference/fhir-put-allergyintolerance.md): Update an entire AllergyIntolerance resource with new resource definition.
+- [List Appointments](https://docs.zushealth.com/reference/fhir-search-appointment.md): Search for Appointment resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST Appointment resource](https://docs.zushealth.com/reference/fhir-post-appointment.md): Create a new Appointment resource.
+- [DELETE Appointment resource](https://docs.zushealth.com/reference/fhir-delete-appointment.md): Delete an Appointment resource.
+- [GET Appointment by FHIR ID](https://docs.zushealth.com/reference/fhir-get-appointment.md): Retrieve an Appointment resource. The latest version of the resource is returned.
+- [PATCH Appointment resource](https://docs.zushealth.com/reference/fhir-patch-appointment.md): Update a part of an Appointment resource.
+- [PUT Appointment resource](https://docs.zushealth.com/reference/fhir-put-appointment.md): Update an entire Appointment resource with new resource definition.
+- [List AppointmentResponses](https://docs.zushealth.com/reference/fhir-search-appointmentresponse.md): Search for AppointmentResponse resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST AppointmentResponse resource](https://docs.zushealth.com/reference/fhir-post-appointmentresponse.md): Create a new AppointmentResponse resource.
+- [DELETE AppointmentResponse resource](https://docs.zushealth.com/reference/fhir-delete-appointmentresponse.md): Delete an AppointmentResponse resource.
+- [GET AppointmentResponse by FHIR ID](https://docs.zushealth.com/reference/fhir-get-appointmentresponse.md): Retrieve an AppointmentResponse resource. The latest version of the resource is returned.
+- [PATCH AppointmentResponse resource](https://docs.zushealth.com/reference/fhir-patch-appointmentresponse.md): Update a part of an AppointmentResponse resource.
+- [PUT AppointmentResponse resource](https://docs.zushealth.com/reference/fhir-put-appointmentresponse.md): Update an entire AppointmentResponse resource with new resource definition.
+- [List AuditEvents](https://docs.zushealth.com/reference/fhir-search-auditevent.md): Search for AuditEvent resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST AuditEvent resource](https://docs.zushealth.com/reference/fhir-post-auditevent.md): Create a new AuditEvent resource.
+- [DELETE AuditEvent resource](https://docs.zushealth.com/reference/fhir-delete-auditevent.md): Delete an AuditEvent resource.
+- [GET AuditEvent by FHIR ID](https://docs.zushealth.com/reference/fhir-get-auditevent.md): Retrieve an AuditEvent resource. The latest version of the resource is returned.
+- [PATCH AuditEvent resource](https://docs.zushealth.com/reference/fhir-patch-auditevent.md): Update a part of an AuditEvent resource.
+- [PUT AuditEvent resource](https://docs.zushealth.com/reference/fhir-put-auditevent.md): Update an entire AuditEvent resource with new resource definition.
+- [List Basics](https://docs.zushealth.com/reference/fhir-search-basic.md): Search for Basic resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST Basic resource](https://docs.zushealth.com/reference/fhir-post-basic.md): Create a new Basic resource.
+- [DELETE Basic resource](https://docs.zushealth.com/reference/fhir-delete-basic.md): Delete a Basic resource.
+- [GET Basic by FHIR ID](https://docs.zushealth.com/reference/fhir-get-basic.md): Retrieve a Basic resource. The latest version of the resource is returned.
+- [PATCH Basic resource](https://docs.zushealth.com/reference/fhir-patch-basic.md): Update a part of a Basic resource.
+- [PUT Basic resource](https://docs.zushealth.com/reference/fhir-put-basic.md): Update an entire Basic resource with new resource definition.
+- [List Binarys](https://docs.zushealth.com/reference/fhir-search-binary.md): Search for Binary resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST Binary resource](https://docs.zushealth.com/reference/fhir-post-binary.md): Create a new Binary resource.
+- [DELETE Binary resource](https://docs.zushealth.com/reference/fhir-delete-binary.md): Delete a Binary resource.
+- [GET Binary by FHIR ID](https://docs.zushealth.com/reference/fhir-get-binary.md): Retrieve a Binary resource. The latest version of the resource is returned.
+- [PATCH Binary resource](https://docs.zushealth.com/reference/fhir-patch-binary.md): Update a part of a Binary resource.
+- [PUT Binary resource](https://docs.zushealth.com/reference/fhir-put-binary.md): Update an entire Binary resource with new resource definition.
+- [POST BiologicallyDerivedProduct resource](https://docs.zushealth.com/reference/fhir-post-biologicallyderivedproduct.md): Create a new BiologicallyDerivedProduct resource.
+- [DELETE BiologicallyDerivedProduct resource](https://docs.zushealth.com/reference/fhir-delete-biologicallyderivedproduct.md): Delete a BiologicallyDerivedProduct resource.
+- [GET BiologicallyDerivedProduct by FHIR ID](https://docs.zushealth.com/reference/fhir-get-biologicallyderivedproduct.md): Retrieve a BiologicallyDerivedProduct resource. The latest version of the resource is returned.
+- [PATCH BiologicallyDerivedProduct resource](https://docs.zushealth.com/reference/fhir-patch-biologicallyderivedproduct.md): Update a part of a BiologicallyDerivedProduct resource.
+- [PUT BiologicallyDerivedProduct resource](https://docs.zushealth.com/reference/fhir-put-biologicallyderivedproduct.md): Update an entire BiologicallyDerivedProduct resource with new resource definition.
+- [List BodyStructures](https://docs.zushealth.com/reference/fhir-search-bodystructure.md): Search for BodyStructure resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST BodyStructure resource](https://docs.zushealth.com/reference/fhir-post-bodystructure.md): Create a new BodyStructure resource.
+- [DELETE BodyStructure resource](https://docs.zushealth.com/reference/fhir-delete-bodystructure.md): Delete a BodyStructure resource.
+- [GET BodyStructure by FHIR ID](https://docs.zushealth.com/reference/fhir-get-bodystructure.md): Retrieve a BodyStructure resource. The latest version of the resource is returned.
+- [PATCH BodyStructure resource](https://docs.zushealth.com/reference/fhir-patch-bodystructure.md): Update a part of a BodyStructure resource.
+- [PUT BodyStructure resource](https://docs.zushealth.com/reference/fhir-put-bodystructure.md): Update an entire BodyStructure resource with new resource definition.
+- [List CarePlans](https://docs.zushealth.com/reference/fhir-search-careplan.md): Search for CarePlan resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST CarePlan resource](https://docs.zushealth.com/reference/fhir-post-careplan.md): Create a new CarePlan resource.
+- [DELETE CarePlan resource](https://docs.zushealth.com/reference/fhir-delete-careplan.md): Delete a CarePlan resource.
+- [GET CarePlan by FHIR ID](https://docs.zushealth.com/reference/fhir-get-careplan.md): Retrieve a CarePlan resource. The latest version of the resource is returned.
+- [PATCH CarePlan resource](https://docs.zushealth.com/reference/fhir-patch-careplan.md): Update a part of a CarePlan resource.
+- [PUT CarePlan resource](https://docs.zushealth.com/reference/fhir-put-careplan.md): Update an entire CarePlan resource with new resource definition.
+- [List CareTeams](https://docs.zushealth.com/reference/fhir-search-careteam.md): Search for CareTeam resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST CareTeam resource](https://docs.zushealth.com/reference/fhir-post-careteam.md): Create a new CareTeam resource.
+- [DELETE CareTeam resource](https://docs.zushealth.com/reference/fhir-delete-careteam.md): Delete a CareTeam resource.
+- [GET CareTeam by FHIR ID](https://docs.zushealth.com/reference/fhir-get-careteam.md): Retrieve a CareTeam resource. The latest version of the resource is returned.
+- [PATCH CareTeam resource](https://docs.zushealth.com/reference/fhir-patch-careteam.md): Update a part of a CareTeam resource.
+- [PUT CareTeam resource](https://docs.zushealth.com/reference/fhir-put-careteam.md): Update an entire CareTeam resource with new resource definition.
+- [POST CatalogEntry resource](https://docs.zushealth.com/reference/fhir-post-catalogentry.md): Create a new CatalogEntry resource.
+- [DELETE CatalogEntry resource](https://docs.zushealth.com/reference/fhir-delete-catalogentry.md): Delete a CatalogEntry resource.
+- [GET CatalogEntry by FHIR ID](https://docs.zushealth.com/reference/fhir-get-catalogentry.md): Retrieve a CatalogEntry resource. The latest version of the resource is returned.
+- [PATCH CatalogEntry resource](https://docs.zushealth.com/reference/fhir-patch-catalogentry.md): Update a part of a CatalogEntry resource.
+- [PUT CatalogEntry resource](https://docs.zushealth.com/reference/fhir-put-catalogentry.md): Update an entire CatalogEntry resource with new resource definition.
+- [List ChargeItems](https://docs.zushealth.com/reference/fhir-search-chargeitem.md): Search for ChargeItem resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST ChargeItem resource](https://docs.zushealth.com/reference/fhir-post-chargeitem.md): Create a new ChargeItem resource.
+- [DELETE ChargeItem resource](https://docs.zushealth.com/reference/fhir-delete-chargeitem.md): Delete a ChargeItem resource.
+- [GET ChargeItem by FHIR ID](https://docs.zushealth.com/reference/fhir-get-chargeitem.md): Retrieve a ChargeItem resource. The latest version of the resource is returned.
+- [PATCH ChargeItem resource](https://docs.zushealth.com/reference/fhir-patch-chargeitem.md): Update a part of a ChargeItem resource.
+- [PUT ChargeItem resource](https://docs.zushealth.com/reference/fhir-put-chargeitem.md): Update an entire ChargeItem resource with new resource definition.
+- [POST ChargeItemDefinition resource](https://docs.zushealth.com/reference/fhir-post-chargeitemdefinition.md): Create a new ChargeItemDefinition resource.
+- [DELETE ChargeItemDefinition resource](https://docs.zushealth.com/reference/fhir-delete-chargeitemdefinition.md): Delete a ChargeItemDefinition resource.
+- [GET ChargeItemDefinition by FHIR ID](https://docs.zushealth.com/reference/fhir-get-chargeitemdefinition.md): Retrieve a ChargeItemDefinition resource. The latest version of the resource is returned.
+- [PATCH ChargeItemDefinition resource](https://docs.zushealth.com/reference/fhir-patch-chargeitemdefinition.md): Update a part of a ChargeItemDefinition resource.
+- [PUT ChargeItemDefinition resource](https://docs.zushealth.com/reference/fhir-put-chargeitemdefinition.md): Update an entire ChargeItemDefinition resource with new resource definition.
+- [List Claims](https://docs.zushealth.com/reference/fhir-search-claim.md): Search for Claim resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST Claim resource](https://docs.zushealth.com/reference/fhir-post-claim.md): Create a new Claim resource.
+- [DELETE Claim resource](https://docs.zushealth.com/reference/fhir-delete-claim.md): Delete a Claim resource.
+- [GET Claim by FHIR ID](https://docs.zushealth.com/reference/fhir-get-claim.md): Retrieve a Claim resource. The latest version of the resource is returned.
+- [PATCH Claim resource](https://docs.zushealth.com/reference/fhir-patch-claim.md): Update a part of a Claim resource.
+- [PUT Claim resource](https://docs.zushealth.com/reference/fhir-put-claim.md): Update an entire Claim resource with new resource definition.
+- [List ClaimResponses](https://docs.zushealth.com/reference/fhir-search-claimresponse.md): Search for ClaimResponse resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST ClaimResponse resource](https://docs.zushealth.com/reference/fhir-post-claimresponse.md): Create a new ClaimResponse resource.
+- [DELETE ClaimResponse resource](https://docs.zushealth.com/reference/fhir-delete-claimresponse.md): Delete a ClaimResponse resource.
+- [GET ClaimResponse by FHIR ID](https://docs.zushealth.com/reference/fhir-get-claimresponse.md): Retrieve a ClaimResponse resource. The latest version of the resource is returned.
+- [PATCH ClaimResponse resource](https://docs.zushealth.com/reference/fhir-patch-claimresponse.md): Update a part of a ClaimResponse resource.
+- [PUT ClaimResponse resource](https://docs.zushealth.com/reference/fhir-put-claimresponse.md): Update an entire ClaimResponse resource with new resource definition.
+- [List ClinicalImpressions](https://docs.zushealth.com/reference/fhir-search-clinicalimpression.md): Search for ClinicalImpression resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST ClinicalImpression resource](https://docs.zushealth.com/reference/fhir-post-clinicalimpression.md): Create a new ClinicalImpression resource.
+- [DELETE ClinicalImpression resource](https://docs.zushealth.com/reference/fhir-delete-clinicalimpression.md): Delete a ClinicalImpression resource.
+- [GET ClinicalImpression by FHIR ID](https://docs.zushealth.com/reference/fhir-get-clinicalimpression.md): Retrieve a ClinicalImpression resource. The latest version of the resource is returned.
+- [PATCH ClinicalImpression resource](https://docs.zushealth.com/reference/fhir-patch-clinicalimpression.md): Update a part of a ClinicalImpression resource.
+- [PUT ClinicalImpression resource](https://docs.zushealth.com/reference/fhir-put-clinicalimpression.md): Update an entire ClinicalImpression resource with new resource definition.
+- [List Communications](https://docs.zushealth.com/reference/fhir-search-communication.md): Search for Communication resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST Communication resource](https://docs.zushealth.com/reference/fhir-post-communication.md): Create a new Communication resource.
+- [DELETE Communication resource](https://docs.zushealth.com/reference/fhir-delete-communication.md): Delete a Communication resource.
+- [GET Communication by FHIR ID](https://docs.zushealth.com/reference/fhir-get-communication.md): Retrieve a Communication resource. The latest version of the resource is returned.
+- [PATCH Communication resource](https://docs.zushealth.com/reference/fhir-patch-communication.md): Update a part of a Communication resource.
+- [PUT Communication resource](https://docs.zushealth.com/reference/fhir-put-communication.md): Update an entire Communication resource with new resource definition.
+- [List CommunicationRequests](https://docs.zushealth.com/reference/fhir-search-communicationrequest.md): Search for CommunicationRequest resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST CommunicationRequest resource](https://docs.zushealth.com/reference/fhir-post-communicationrequest.md): Create a new CommunicationRequest resource.
+- [DELETE CommunicationRequest resource](https://docs.zushealth.com/reference/fhir-delete-communicationrequest.md): Delete a CommunicationRequest resource.
+- [GET CommunicationRequest by FHIR ID](https://docs.zushealth.com/reference/fhir-get-communicationrequest.md): Retrieve a CommunicationRequest resource. The latest version of the resource is returned.
+- [PATCH CommunicationRequest resource](https://docs.zushealth.com/reference/fhir-patch-communicationrequest.md): Update a part of a CommunicationRequest resource.
+- [PUT CommunicationRequest resource](https://docs.zushealth.com/reference/fhir-put-communicationrequest.md): Update an entire CommunicationRequest resource with new resource definition.
+- [List Compositions](https://docs.zushealth.com/reference/fhir-search-composition.md): Search for Composition resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST Composition resource](https://docs.zushealth.com/reference/fhir-post-composition.md): Create a new Composition resource.
+- [DELETE Composition resource](https://docs.zushealth.com/reference/fhir-delete-composition.md): Delete a Composition resource.
+- [GET Composition by FHIR ID](https://docs.zushealth.com/reference/fhir-get-composition.md): Retrieve a Composition resource. The latest version of the resource is returned.
+- [PATCH Composition resource](https://docs.zushealth.com/reference/fhir-patch-composition.md): Update a part of a Composition resource.
+- [PUT Composition resource](https://docs.zushealth.com/reference/fhir-put-composition.md): Update an entire Composition resource with new resource definition.
+- [List Conditions](https://docs.zushealth.com/reference/fhir-search-condition.md): Search for Condition resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST Condition resource](https://docs.zushealth.com/reference/fhir-post-condition.md): Create a new Condition resource.
+- [DELETE Condition resource](https://docs.zushealth.com/reference/fhir-delete-condition.md): Delete a Condition resource.
+- [GET Condition by FHIR ID](https://docs.zushealth.com/reference/fhir-get-condition.md): Retrieve a Condition resource. The latest version of the resource is returned.
+- [PATCH Condition resource](https://docs.zushealth.com/reference/fhir-patch-condition.md): Update a part of a Condition resource.
+- [PUT Condition resource](https://docs.zushealth.com/reference/fhir-put-condition.md): Update an entire Condition resource with new resource definition.
+- [List Consents](https://docs.zushealth.com/reference/fhir-search-consent.md): Search for Consent resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST Consent resource](https://docs.zushealth.com/reference/fhir-post-consent.md): Create a new Consent resource.
+- [DELETE Consent resource](https://docs.zushealth.com/reference/fhir-delete-consent.md): Delete a Consent resource.
+- [GET Consent by FHIR ID](https://docs.zushealth.com/reference/fhir-get-consent.md): Retrieve a Consent resource. The latest version of the resource is returned.
+- [PATCH Consent resource](https://docs.zushealth.com/reference/fhir-patch-consent.md): Update a part of a Consent resource.
+- [PUT Consent resource](https://docs.zushealth.com/reference/fhir-put-consent.md): Update an entire Consent resource with new resource definition.
+- [POST Contract resource](https://docs.zushealth.com/reference/fhir-post-contract.md): Create a new Contract resource.
+- [DELETE Contract resource](https://docs.zushealth.com/reference/fhir-delete-contract.md): Delete a Contract resource.
+- [GET Contract by FHIR ID](https://docs.zushealth.com/reference/fhir-get-contract.md): Retrieve a Contract resource. The latest version of the resource is returned.
+- [PATCH Contract resource](https://docs.zushealth.com/reference/fhir-patch-contract.md): Update a part of a Contract resource.
+- [PUT Contract resource](https://docs.zushealth.com/reference/fhir-put-contract.md): Update an entire Contract resource with new resource definition.
+- [List Coverages](https://docs.zushealth.com/reference/fhir-search-coverage.md): Search for Coverage resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST Coverage resource](https://docs.zushealth.com/reference/fhir-post-coverage.md): Create a new Coverage resource.
+- [DELETE Coverage resource](https://docs.zushealth.com/reference/fhir-delete-coverage.md): Delete a Coverage resource.
+- [GET Coverage by FHIR ID](https://docs.zushealth.com/reference/fhir-get-coverage.md): Retrieve a Coverage resource. The latest version of the resource is returned.
+- [PATCH Coverage resource](https://docs.zushealth.com/reference/fhir-patch-coverage.md): Update a part of a Coverage resource.
+- [PUT Coverage resource](https://docs.zushealth.com/reference/fhir-put-coverage.md): Update an entire Coverage resource with new resource definition.
+- [List CoverageEligibilityRequests](https://docs.zushealth.com/reference/fhir-search-coverageeligibilityrequest.md): Search for CoverageEligibilityRequest resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST CoverageEligibilityRequest resource](https://docs.zushealth.com/reference/fhir-post-coverageeligibilityrequest.md): Create a new CoverageEligibilityRequest resource.
+- [DELETE CoverageEligibilityRequest resource](https://docs.zushealth.com/reference/fhir-delete-coverageeligibilityrequest.md): Delete a CoverageEligibilityRequest resource.
+- [GET CoverageEligibilityRequest by FHIR ID](https://docs.zushealth.com/reference/fhir-get-coverageeligibilityrequest.md): Retrieve a CoverageEligibilityRequest resource. The latest version of the resource is returned.
+- [PATCH CoverageEligibilityRequest resource](https://docs.zushealth.com/reference/fhir-patch-coverageeligibilityrequest.md): Update a part of a CoverageEligibilityRequest resource.
+- [PUT CoverageEligibilityRequest resource](https://docs.zushealth.com/reference/fhir-put-coverageeligibilityrequest.md): Update an entire CoverageEligibilityRequest resource with new resource definition.
+- [List CoverageEligibilityResponses](https://docs.zushealth.com/reference/fhir-search-coverageeligibilityresponse.md): Search for CoverageEligibilityResponse resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST CoverageEligibilityResponse resource](https://docs.zushealth.com/reference/fhir-post-coverageeligibilityresponse.md): Create a new CoverageEligibilityResponse resource.
+- [DELETE CoverageEligibilityResponse resource](https://docs.zushealth.com/reference/fhir-delete-coverageeligibilityresponse.md): Delete a CoverageEligibilityResponse resource.
+- [GET CoverageEligibilityResponse by FHIR ID](https://docs.zushealth.com/reference/fhir-get-coverageeligibilityresponse.md): Retrieve a CoverageEligibilityResponse resource. The latest version of the resource is returned.
+- [PATCH CoverageEligibilityResponse resource](https://docs.zushealth.com/reference/fhir-patch-coverageeligibilityresponse.md): Update a part of a CoverageEligibilityResponse resource.
+- [PUT CoverageEligibilityResponse resource](https://docs.zushealth.com/reference/fhir-put-coverageeligibilityresponse.md): Update an entire CoverageEligibilityResponse resource with new resource definition.
+- [List DetectedIssues](https://docs.zushealth.com/reference/fhir-search-detectedissue.md): Search for DetectedIssue resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST DetectedIssue resource](https://docs.zushealth.com/reference/fhir-post-detectedissue.md): Create a new DetectedIssue resource.
+- [DELETE DetectedIssue resource](https://docs.zushealth.com/reference/fhir-delete-detectedissue.md): Delete a DetectedIssue resource.
+- [GET DetectedIssue by FHIR ID](https://docs.zushealth.com/reference/fhir-get-detectedissue.md): Retrieve a DetectedIssue resource. The latest version of the resource is returned.
+- [PATCH DetectedIssue resource](https://docs.zushealth.com/reference/fhir-patch-detectedissue.md): Update a part of a DetectedIssue resource.
+- [PUT DetectedIssue resource](https://docs.zushealth.com/reference/fhir-put-detectedissue.md): Update an entire DetectedIssue resource with new resource definition.
+- [List Devices](https://docs.zushealth.com/reference/fhir-search-device.md): Search for Device resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST Device resource](https://docs.zushealth.com/reference/fhir-post-device.md): Create a new Device resource.
+- [DELETE Device resource](https://docs.zushealth.com/reference/fhir-delete-device.md): Delete a Device resource.
+- [GET Device by FHIR ID](https://docs.zushealth.com/reference/fhir-get-device.md): Retrieve a Device resource. The latest version of the resource is returned.
+- [PATCH Device resource](https://docs.zushealth.com/reference/fhir-patch-device.md): Update a part of a Device resource.
+- [PUT Device resource](https://docs.zushealth.com/reference/fhir-put-device.md): Update an entire Device resource with new resource definition.
+- [POST DeviceDefinition resource](https://docs.zushealth.com/reference/fhir-post-devicedefinition.md): Create a new DeviceDefinition resource.
+- [DELETE DeviceDefinition resource](https://docs.zushealth.com/reference/fhir-delete-devicedefinition.md): Delete a DeviceDefinition resource.
+- [GET DeviceDefinition by FHIR ID](https://docs.zushealth.com/reference/fhir-get-devicedefinition.md): Retrieve a DeviceDefinition resource. The latest version of the resource is returned.
+- [PATCH DeviceDefinition resource](https://docs.zushealth.com/reference/fhir-patch-devicedefinition.md): Update a part of a DeviceDefinition resource.
+- [PUT DeviceDefinition resource](https://docs.zushealth.com/reference/fhir-put-devicedefinition.md): Update an entire DeviceDefinition resource with new resource definition.
+- [POST DeviceMetric resource](https://docs.zushealth.com/reference/fhir-post-devicemetric.md): Create a new DeviceMetric resource.
+- [DELETE DeviceMetric resource](https://docs.zushealth.com/reference/fhir-delete-devicemetric.md): Delete a DeviceMetric resource.
+- [GET DeviceMetric by FHIR ID](https://docs.zushealth.com/reference/fhir-get-devicemetric.md): Retrieve a DeviceMetric resource. The latest version of the resource is returned.
+- [PATCH DeviceMetric resource](https://docs.zushealth.com/reference/fhir-patch-devicemetric.md): Update a part of a DeviceMetric resource.
+- [PUT DeviceMetric resource](https://docs.zushealth.com/reference/fhir-put-devicemetric.md): Update an entire DeviceMetric resource with new resource definition.
+- [List DeviceRequests](https://docs.zushealth.com/reference/fhir-search-devicerequest.md): Search for DeviceRequest resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST DeviceRequest resource](https://docs.zushealth.com/reference/fhir-post-devicerequest.md): Create a new DeviceRequest resource.
+- [DELETE DeviceRequest resource](https://docs.zushealth.com/reference/fhir-delete-devicerequest.md): Delete a DeviceRequest resource.
+- [GET DeviceRequest by FHIR ID](https://docs.zushealth.com/reference/fhir-get-devicerequest.md): Retrieve a DeviceRequest resource. The latest version of the resource is returned.
+- [PATCH DeviceRequest resource](https://docs.zushealth.com/reference/fhir-patch-devicerequest.md): Update a part of a DeviceRequest resource.
+- [PUT DeviceRequest resource](https://docs.zushealth.com/reference/fhir-put-devicerequest.md): Update an entire DeviceRequest resource with new resource definition.
+- [List DeviceUseStatements](https://docs.zushealth.com/reference/fhir-search-deviceusestatement.md): Search for DeviceUseStatement resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST DeviceUseStatement resource](https://docs.zushealth.com/reference/fhir-post-deviceusestatement.md): Create a new DeviceUseStatement resource.
+- [DELETE DeviceUseStatement resource](https://docs.zushealth.com/reference/fhir-delete-deviceusestatement.md): Delete a DeviceUseStatement resource.
+- [GET DeviceUseStatement by FHIR ID](https://docs.zushealth.com/reference/fhir-get-deviceusestatement.md): Retrieve a DeviceUseStatement resource. The latest version of the resource is returned.
+- [PATCH DeviceUseStatement resource](https://docs.zushealth.com/reference/fhir-patch-deviceusestatement.md): Update a part of a DeviceUseStatement resource.
+- [PUT DeviceUseStatement resource](https://docs.zushealth.com/reference/fhir-put-deviceusestatement.md): Update an entire DeviceUseStatement resource with new resource definition.
+- [List DiagnosticReports](https://docs.zushealth.com/reference/fhir-search-diagnosticreport.md): Search for DiagnosticReport resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST DiagnosticReport resource](https://docs.zushealth.com/reference/fhir-post-diagnosticreport.md): Create a new DiagnosticReport resource.
+- [DELETE DiagnosticReport resource](https://docs.zushealth.com/reference/fhir-delete-diagnosticreport.md): Delete a DiagnosticReport resource.
+- [GET DiagnosticReport by FHIR ID](https://docs.zushealth.com/reference/fhir-get-diagnosticreport.md): Retrieve a DiagnosticReport resource. The latest version of the resource is returned.
+- [PATCH DiagnosticReport resource](https://docs.zushealth.com/reference/fhir-patch-diagnosticreport.md): Update a part of a DiagnosticReport resource.
+- [PUT DiagnosticReport resource](https://docs.zushealth.com/reference/fhir-put-diagnosticreport.md): Update an entire DiagnosticReport resource with new resource definition.
+- [List DocumentManifests](https://docs.zushealth.com/reference/fhir-search-documentmanifest.md): Search for DocumentManifest resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST DocumentManifest resource](https://docs.zushealth.com/reference/fhir-post-documentmanifest.md): Create a new DocumentManifest resource.
+- [DELETE DocumentManifest resource](https://docs.zushealth.com/reference/fhir-delete-documentmanifest.md): Delete a DocumentManifest resource.
+- [GET DocumentManifest by FHIR ID](https://docs.zushealth.com/reference/fhir-get-documentmanifest.md): Retrieve a DocumentManifest resource. The latest version of the resource is returned.
+- [PATCH DocumentManifest resource](https://docs.zushealth.com/reference/fhir-patch-documentmanifest.md): Update a part of a DocumentManifest resource.
+- [PUT DocumentManifest resource](https://docs.zushealth.com/reference/fhir-put-documentmanifest.md): Update an entire DocumentManifest resource with new resource definition.
+- [List DocumentReferences](https://docs.zushealth.com/reference/fhir-search-documentreference.md): Search for DocumentReference resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST DocumentReference resource](https://docs.zushealth.com/reference/fhir-post-documentreference.md): Create a new DocumentReference resource.
+- [DELETE DocumentReference resource](https://docs.zushealth.com/reference/fhir-delete-documentreference.md): Delete a DocumentReference resource.
+- [GET DocumentReference by FHIR ID](https://docs.zushealth.com/reference/fhir-get-documentreference.md): Retrieve a DocumentReference resource. The latest version of the resource is returned.
+- [PATCH DocumentReference resource](https://docs.zushealth.com/reference/fhir-patch-documentreference.md): Update a part of a DocumentReference resource.
+- [PUT DocumentReference resource](https://docs.zushealth.com/reference/fhir-put-documentreference.md): Update an entire DocumentReference resource with new resource definition.
+- [POST EffectEvidenceSynthesis resource](https://docs.zushealth.com/reference/fhir-post-effectevidencesynthesis.md): Create a new EffectEvidenceSynthesis resource.
+- [DELETE EffectEvidenceSynthesis resource](https://docs.zushealth.com/reference/fhir-delete-effectevidencesynthesis.md): Delete an EffectEvidenceSynthesis resource.
+- [GET EffectEvidenceSynthesis by FHIR ID](https://docs.zushealth.com/reference/fhir-get-effectevidencesynthesis.md): Retrieve an EffectEvidenceSynthesis resource. The latest version of the resource is returned.
+- [PATCH EffectEvidenceSynthesis resource](https://docs.zushealth.com/reference/fhir-patch-effectevidencesynthesis.md): Update a part of an EffectEvidenceSynthesis resource.
+- [PUT EffectEvidenceSynthesis resource](https://docs.zushealth.com/reference/fhir-put-effectevidencesynthesis.md): Update an entire EffectEvidenceSynthesis resource with new resource definition.
+- [List Encounters](https://docs.zushealth.com/reference/fhir-search-encounter.md): Search for Encounter resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST Encounter resource](https://docs.zushealth.com/reference/fhir-post-encounter.md): Create a new Encounter resource.
+- [DELETE Encounter resource](https://docs.zushealth.com/reference/fhir-delete-encounter.md): Delete an Encounter resource.
+- [GET Encounter by FHIR ID](https://docs.zushealth.com/reference/fhir-get-encounter.md): Retrieve an Encounter resource. The latest version of the resource is returned.
+- [PATCH Encounter resource](https://docs.zushealth.com/reference/fhir-patch-encounter.md): Update a part of an Encounter resource.
+- [PUT Encounter resource](https://docs.zushealth.com/reference/fhir-put-encounter.md): Update an entire Encounter resource with new resource definition.
+- [POST Endpoint resource](https://docs.zushealth.com/reference/fhir-post-endpoint.md): Create a new Endpoint resource.
+- [DELETE Endpoint resource](https://docs.zushealth.com/reference/fhir-delete-endpoint.md): Delete an Endpoint resource.
+- [GET Endpoint by FHIR ID](https://docs.zushealth.com/reference/fhir-get-endpoint.md): Retrieve an Endpoint resource. The latest version of the resource is returned.
+- [PATCH Endpoint resource](https://docs.zushealth.com/reference/fhir-patch-endpoint.md): Update a part of an Endpoint resource.
+- [PUT Endpoint resource](https://docs.zushealth.com/reference/fhir-put-endpoint.md): Update an entire Endpoint resource with new resource definition.
+- [List EnrollmentRequests](https://docs.zushealth.com/reference/fhir-search-enrollmentrequest.md): Search for EnrollmentRequest resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST EnrollmentRequest resource](https://docs.zushealth.com/reference/fhir-post-enrollmentrequest.md): Create a new EnrollmentRequest resource.
+- [DELETE EnrollmentRequest resource](https://docs.zushealth.com/reference/fhir-delete-enrollmentrequest.md): Delete an EnrollmentRequest resource.
+- [GET EnrollmentRequest by FHIR ID](https://docs.zushealth.com/reference/fhir-get-enrollmentrequest.md): Retrieve an EnrollmentRequest resource. The latest version of the resource is returned.
+- [PATCH EnrollmentRequest resource](https://docs.zushealth.com/reference/fhir-patch-enrollmentrequest.md): Update a part of an EnrollmentRequest resource.
+- [PUT EnrollmentRequest resource](https://docs.zushealth.com/reference/fhir-put-enrollmentrequest.md): Update an entire EnrollmentRequest resource with new resource definition.
+- [POST EnrollmentResponse resource](https://docs.zushealth.com/reference/fhir-post-enrollmentresponse.md): Create a new EnrollmentResponse resource.
+- [DELETE EnrollmentResponse resource](https://docs.zushealth.com/reference/fhir-delete-enrollmentresponse.md): Delete an EnrollmentResponse resource.
+- [GET EnrollmentResponse by FHIR ID](https://docs.zushealth.com/reference/fhir-get-enrollmentresponse.md): Retrieve an EnrollmentResponse resource. The latest version of the resource is returned.
+- [PATCH EnrollmentResponse resource](https://docs.zushealth.com/reference/fhir-patch-enrollmentresponse.md): Update a part of an EnrollmentResponse resource.
+- [PUT EnrollmentResponse resource](https://docs.zushealth.com/reference/fhir-put-enrollmentresponse.md): Update an entire EnrollmentResponse resource with new resource definition.
+- [List EpisodeOfCares](https://docs.zushealth.com/reference/fhir-search-episodeofcare.md): Search for EpisodeOfCare resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST EpisodeOfCare resource](https://docs.zushealth.com/reference/fhir-post-episodeofcare.md): Create a new EpisodeOfCare resource.
+- [DELETE EpisodeOfCare resource](https://docs.zushealth.com/reference/fhir-delete-episodeofcare.md): Delete an EpisodeOfCare resource.
+- [GET EpisodeOfCare by FHIR ID](https://docs.zushealth.com/reference/fhir-get-episodeofcare.md): Retrieve an EpisodeOfCare resource. The latest version of the resource is returned.
+- [PATCH EpisodeOfCare resource](https://docs.zushealth.com/reference/fhir-patch-episodeofcare.md): Update a part of an EpisodeOfCare resource.
+- [PUT EpisodeOfCare resource](https://docs.zushealth.com/reference/fhir-put-episodeofcare.md): Update an entire EpisodeOfCare resource with new resource definition.
+- [POST EventDefinition resource](https://docs.zushealth.com/reference/fhir-post-eventdefinition.md): Create a new EventDefinition resource.
+- [DELETE EventDefinition resource](https://docs.zushealth.com/reference/fhir-delete-eventdefinition.md): Delete an EventDefinition resource.
+- [GET EventDefinition by FHIR ID](https://docs.zushealth.com/reference/fhir-get-eventdefinition.md): Retrieve an EventDefinition resource. The latest version of the resource is returned.
+- [PATCH EventDefinition resource](https://docs.zushealth.com/reference/fhir-patch-eventdefinition.md): Update a part of an EventDefinition resource.
+- [PUT EventDefinition resource](https://docs.zushealth.com/reference/fhir-put-eventdefinition.md): Update an entire EventDefinition resource with new resource definition.
+- [POST Evidence resource](https://docs.zushealth.com/reference/fhir-post-evidence.md): Create a new Evidence resource.
+- [DELETE Evidence resource](https://docs.zushealth.com/reference/fhir-delete-evidence.md): Delete an Evidence resource.
+- [GET Evidence by FHIR ID](https://docs.zushealth.com/reference/fhir-get-evidence.md): Retrieve an Evidence resource. The latest version of the resource is returned.
+- [PATCH Evidence resource](https://docs.zushealth.com/reference/fhir-patch-evidence.md): Update a part of an Evidence resource.
+- [PUT Evidence resource](https://docs.zushealth.com/reference/fhir-put-evidence.md): Update an entire Evidence resource with new resource definition.
+- [POST EvidenceVariable resource](https://docs.zushealth.com/reference/fhir-post-evidencevariable.md): Create a new EvidenceVariable resource.
+- [DELETE EvidenceVariable resource](https://docs.zushealth.com/reference/fhir-delete-evidencevariable.md): Delete an EvidenceVariable resource.
+- [GET EvidenceVariable by FHIR ID](https://docs.zushealth.com/reference/fhir-get-evidencevariable.md): Retrieve an EvidenceVariable resource. The latest version of the resource is returned.
+- [PATCH EvidenceVariable resource](https://docs.zushealth.com/reference/fhir-patch-evidencevariable.md): Update a part of an EvidenceVariable resource.
+- [PUT EvidenceVariable resource](https://docs.zushealth.com/reference/fhir-put-evidencevariable.md): Update an entire EvidenceVariable resource with new resource definition.
+- [POST ExampleScenario resource](https://docs.zushealth.com/reference/fhir-post-examplescenario.md): Create a new ExampleScenario resource.
+- [DELETE ExampleScenario resource](https://docs.zushealth.com/reference/fhir-delete-examplescenario.md): Delete an ExampleScenario resource.
+- [GET ExampleScenario by FHIR ID](https://docs.zushealth.com/reference/fhir-get-examplescenario.md): Retrieve an ExampleScenario resource. The latest version of the resource is returned.
+- [PATCH ExampleScenario resource](https://docs.zushealth.com/reference/fhir-patch-examplescenario.md): Update a part of an ExampleScenario resource.
+- [PUT ExampleScenario resource](https://docs.zushealth.com/reference/fhir-put-examplescenario.md): Update an entire ExampleScenario resource with new resource definition.
+- [List ExplanationOfBenefits](https://docs.zushealth.com/reference/fhir-search-explanationofbenefit.md): Search for ExplanationOfBenefit resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST ExplanationOfBenefit resource](https://docs.zushealth.com/reference/fhir-post-explanationofbenefit.md): Create a new ExplanationOfBenefit resource.
+- [DELETE ExplanationOfBenefit resource](https://docs.zushealth.com/reference/fhir-delete-explanationofbenefit.md): Delete an ExplanationOfBenefit resource.
+- [GET ExplanationOfBenefit by FHIR ID](https://docs.zushealth.com/reference/fhir-get-explanationofbenefit.md): Retrieve an ExplanationOfBenefit resource. The latest version of the resource is returned.
+- [PATCH ExplanationOfBenefit resource](https://docs.zushealth.com/reference/fhir-patch-explanationofbenefit.md): Update a part of an ExplanationOfBenefit resource.
+- [PUT ExplanationOfBenefit resource](https://docs.zushealth.com/reference/fhir-put-explanationofbenefit.md): Update an entire ExplanationOfBenefit resource with new resource definition.
+- [List FamilyMemberHistorys](https://docs.zushealth.com/reference/fhir-search-familymemberhistory.md): Search for FamilyMemberHistory resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST FamilyMemberHistory resource](https://docs.zushealth.com/reference/fhir-post-familymemberhistory.md): Create a new FamilyMemberHistory resource.
+- [DELETE FamilyMemberHistory resource](https://docs.zushealth.com/reference/fhir-delete-familymemberhistory.md): Delete a FamilyMemberHistory resource.
+- [GET FamilyMemberHistory by FHIR ID](https://docs.zushealth.com/reference/fhir-get-familymemberhistory.md): Retrieve a FamilyMemberHistory resource. The latest version of the resource is returned.
+- [PATCH FamilyMemberHistory resource](https://docs.zushealth.com/reference/fhir-patch-familymemberhistory.md): Update a part of a FamilyMemberHistory resource.
+- [PUT FamilyMemberHistory resource](https://docs.zushealth.com/reference/fhir-put-familymemberhistory.md): Update an entire FamilyMemberHistory resource with new resource definition.
+- [List Flags](https://docs.zushealth.com/reference/fhir-search-flag.md): Search for Flag resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST Flag resource](https://docs.zushealth.com/reference/fhir-post-flag.md): Create a new Flag resource.
+- [DELETE Flag resource](https://docs.zushealth.com/reference/fhir-delete-flag.md): Delete a Flag resource.
+- [GET Flag by FHIR ID](https://docs.zushealth.com/reference/fhir-get-flag.md): Retrieve a Flag resource. The latest version of the resource is returned.
+- [PATCH Flag resource](https://docs.zushealth.com/reference/fhir-patch-flag.md): Update a part of a Flag resource.
+- [PUT Flag resource](https://docs.zushealth.com/reference/fhir-put-flag.md): Update an entire Flag resource with new resource definition.
+- [List Goals](https://docs.zushealth.com/reference/fhir-search-goal.md): Search for Goal resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST Goal resource](https://docs.zushealth.com/reference/fhir-post-goal.md): Create a new Goal resource.
+- [DELETE Goal resource](https://docs.zushealth.com/reference/fhir-delete-goal.md): Delete a Goal resource.
+- [GET Goal by FHIR ID](https://docs.zushealth.com/reference/fhir-get-goal.md): Retrieve a Goal resource. The latest version of the resource is returned.
+- [PATCH Goal resource](https://docs.zushealth.com/reference/fhir-patch-goal.md): Update a part of a Goal resource.
+- [PUT Goal resource](https://docs.zushealth.com/reference/fhir-put-goal.md): Update an entire Goal resource with new resource definition.
+- [List Groups](https://docs.zushealth.com/reference/fhir-search-group.md): Search for Group resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST Group resource](https://docs.zushealth.com/reference/fhir-post-group.md): Create a new Group resource.
+- [DELETE Group resource](https://docs.zushealth.com/reference/fhir-delete-group.md): Delete a Group resource.
+- [GET Group by FHIR ID](https://docs.zushealth.com/reference/fhir-get-group.md): Retrieve a Group resource. The latest version of the resource is returned.
+- [PATCH Group resource](https://docs.zushealth.com/reference/fhir-patch-group.md): Update a part of a Group resource.
+- [PUT Group resource](https://docs.zushealth.com/reference/fhir-put-group.md): Update an entire Group resource with new resource definition.
+- [POST GuidanceResponse resource](https://docs.zushealth.com/reference/fhir-post-guidanceresponse.md): Create a new GuidanceResponse resource.
+- [DELETE GuidanceResponse resource](https://docs.zushealth.com/reference/fhir-delete-guidanceresponse.md): Delete a GuidanceResponse resource.
+- [GET GuidanceResponse by FHIR ID](https://docs.zushealth.com/reference/fhir-get-guidanceresponse.md): Retrieve a GuidanceResponse resource. The latest version of the resource is returned.
+- [PATCH GuidanceResponse resource](https://docs.zushealth.com/reference/fhir-patch-guidanceresponse.md): Update a part of a GuidanceResponse resource.
+- [PUT GuidanceResponse resource](https://docs.zushealth.com/reference/fhir-put-guidanceresponse.md): Update an entire GuidanceResponse resource with new resource definition.
+- [POST HealthcareService resource](https://docs.zushealth.com/reference/fhir-post-healthcareservice.md): Create a new HealthcareService resource.
+- [DELETE HealthcareService resource](https://docs.zushealth.com/reference/fhir-delete-healthcareservice.md): Delete a HealthcareService resource.
+- [GET HealthcareService by FHIR ID](https://docs.zushealth.com/reference/fhir-get-healthcareservice.md): Retrieve a HealthcareService resource. The latest version of the resource is returned.
+- [PATCH HealthcareService resource](https://docs.zushealth.com/reference/fhir-patch-healthcareservice.md): Update a part of a HealthcareService resource.
+- [PUT HealthcareService resource](https://docs.zushealth.com/reference/fhir-put-healthcareservice.md): Update an entire HealthcareService resource with new resource definition.
+- [List ImagingStudys](https://docs.zushealth.com/reference/fhir-search-imagingstudy.md): Search for ImagingStudy resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST ImagingStudy resource](https://docs.zushealth.com/reference/fhir-post-imagingstudy.md): Create a new ImagingStudy resource.
+- [DELETE ImagingStudy resource](https://docs.zushealth.com/reference/fhir-delete-imagingstudy.md): Delete an ImagingStudy resource.
+- [GET ImagingStudy by FHIR ID](https://docs.zushealth.com/reference/fhir-get-imagingstudy.md): Retrieve an ImagingStudy resource. The latest version of the resource is returned.
+- [PATCH ImagingStudy resource](https://docs.zushealth.com/reference/fhir-patch-imagingstudy.md): Update a part of an ImagingStudy resource.
+- [PUT ImagingStudy resource](https://docs.zushealth.com/reference/fhir-put-imagingstudy.md): Update an entire ImagingStudy resource with new resource definition.
+- [List Immunizations](https://docs.zushealth.com/reference/fhir-search-immunization.md): Search for Immunization resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST Immunization resource](https://docs.zushealth.com/reference/fhir-post-immunization.md): Create a new Immunization resource.
+- [DELETE Immunization resource](https://docs.zushealth.com/reference/fhir-delete-immunization.md): Delete an Immunization resource.
+- [GET Immunization by FHIR ID](https://docs.zushealth.com/reference/fhir-get-immunization.md): Retrieve an Immunization resource. The latest version of the resource is returned.
+- [PATCH Immunization resource](https://docs.zushealth.com/reference/fhir-patch-immunization.md): Update a part of an Immunization resource.
+- [PUT Immunization resource](https://docs.zushealth.com/reference/fhir-put-immunization.md): Update an entire Immunization resource with new resource definition.
+- [List ImmunizationEvaluations](https://docs.zushealth.com/reference/fhir-search-immunizationevaluation.md): Search for ImmunizationEvaluation resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST ImmunizationEvaluation resource](https://docs.zushealth.com/reference/fhir-post-immunizationevaluation.md): Create a new ImmunizationEvaluation resource.
+- [DELETE ImmunizationEvaluation resource](https://docs.zushealth.com/reference/fhir-delete-immunizationevaluation.md): Delete an ImmunizationEvaluation resource.
+- [GET ImmunizationEvaluation by FHIR ID](https://docs.zushealth.com/reference/fhir-get-immunizationevaluation.md): Retrieve an ImmunizationEvaluation resource. The latest version of the resource is returned.
+- [PATCH ImmunizationEvaluation resource](https://docs.zushealth.com/reference/fhir-patch-immunizationevaluation.md): Update a part of an ImmunizationEvaluation resource.
+- [PUT ImmunizationEvaluation resource](https://docs.zushealth.com/reference/fhir-put-immunizationevaluation.md): Update an entire ImmunizationEvaluation resource with new resource definition.
+- [List ImmunizationRecommendations](https://docs.zushealth.com/reference/fhir-search-immunizationrecommendation.md): Search for ImmunizationRecommendation resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST ImmunizationRecommendation resource](https://docs.zushealth.com/reference/fhir-post-immunizationrecommendation.md): Create a new ImmunizationRecommendation resource.
+- [DELETE ImmunizationRecommendation resource](https://docs.zushealth.com/reference/fhir-delete-immunizationrecommendation.md): Delete an ImmunizationRecommendation resource.
+- [GET ImmunizationRecommendation by FHIR ID](https://docs.zushealth.com/reference/fhir-get-immunizationrecommendation.md): Retrieve an ImmunizationRecommendation resource. The latest version of the resource is returned.
+- [PATCH ImmunizationRecommendation resource](https://docs.zushealth.com/reference/fhir-patch-immunizationrecommendation.md): Update a part of an ImmunizationRecommendation resource.
+- [PUT ImmunizationRecommendation resource](https://docs.zushealth.com/reference/fhir-put-immunizationrecommendation.md): Update an entire ImmunizationRecommendation resource with new resource definition.
+- [POST InsurancePlan resource](https://docs.zushealth.com/reference/fhir-post-insuranceplan.md): Create a new InsurancePlan resource.
+- [DELETE InsurancePlan resource](https://docs.zushealth.com/reference/fhir-delete-insuranceplan.md): Delete an InsurancePlan resource.
+- [GET InsurancePlan by FHIR ID](https://docs.zushealth.com/reference/fhir-get-insuranceplan.md): Retrieve an InsurancePlan resource. The latest version of the resource is returned.
+- [PATCH InsurancePlan resource](https://docs.zushealth.com/reference/fhir-patch-insuranceplan.md): Update a part of an InsurancePlan resource.
+- [PUT InsurancePlan resource](https://docs.zushealth.com/reference/fhir-put-insuranceplan.md): Update an entire InsurancePlan resource with new resource definition.
+- [List Invoices](https://docs.zushealth.com/reference/fhir-search-invoice.md): Search for Invoice resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST Invoice resource](https://docs.zushealth.com/reference/fhir-post-invoice.md): Create a new Invoice resource.
+- [DELETE Invoice resource](https://docs.zushealth.com/reference/fhir-delete-invoice.md): Delete an Invoice resource.
+- [GET Invoice by FHIR ID](https://docs.zushealth.com/reference/fhir-get-invoice.md): Retrieve an Invoice resource. The latest version of the resource is returned.
+- [PATCH Invoice resource](https://docs.zushealth.com/reference/fhir-patch-invoice.md): Update a part of an Invoice resource.
+- [PUT Invoice resource](https://docs.zushealth.com/reference/fhir-put-invoice.md): Update an entire Invoice resource with new resource definition.
+- [POST Library resource](https://docs.zushealth.com/reference/fhir-post-library.md): Create a new Library resource.
+- [DELETE Library resource](https://docs.zushealth.com/reference/fhir-delete-library.md): Delete a Library resource.
+- [GET Library by FHIR ID](https://docs.zushealth.com/reference/fhir-get-library.md): Retrieve a Library resource. The latest version of the resource is returned.
+- [PATCH Library resource](https://docs.zushealth.com/reference/fhir-patch-library.md): Update a part of a Library resource.
+- [PUT Library resource](https://docs.zushealth.com/reference/fhir-put-library.md): Update an entire Library resource with new resource definition.
+- [POST Linkage resource](https://docs.zushealth.com/reference/fhir-post-linkage.md): Create a new Linkage resource.
+- [DELETE Linkage resource](https://docs.zushealth.com/reference/fhir-delete-linkage.md): Delete a Linkage resource.
+- [GET Linkage by FHIR ID](https://docs.zushealth.com/reference/fhir-get-linkage.md): Retrieve a Linkage resource. The latest version of the resource is returned.
+- [PATCH Linkage resource](https://docs.zushealth.com/reference/fhir-patch-linkage.md): Update a part of a Linkage resource.
+- [PUT Linkage resource](https://docs.zushealth.com/reference/fhir-put-linkage.md): Update an entire Linkage resource with new resource definition.
+- [List Lists](https://docs.zushealth.com/reference/fhir-search-list.md): Search for List resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST List resource](https://docs.zushealth.com/reference/fhir-post-list.md): Create a new List resource.
+- [DELETE List resource](https://docs.zushealth.com/reference/fhir-delete-list.md): Delete a List resource.
+- [GET List by FHIR ID](https://docs.zushealth.com/reference/fhir-get-list.md): Retrieve a List resource. The latest version of the resource is returned.
+- [PATCH List resource](https://docs.zushealth.com/reference/fhir-patch-list.md): Update a part of a List resource.
+- [PUT List resource](https://docs.zushealth.com/reference/fhir-put-list.md): Update an entire List resource with new resource definition.
+- [List Locations](https://docs.zushealth.com/reference/fhir-search-location.md): Search for Location resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST Location resource](https://docs.zushealth.com/reference/fhir-post-location.md): Create a new Location resource.
+- [DELETE Location resource](https://docs.zushealth.com/reference/fhir-delete-location.md): Delete a Location resource.
+- [GET Location by FHIR ID](https://docs.zushealth.com/reference/fhir-get-location.md): Retrieve a Location resource. The latest version of the resource is returned.
+- [PATCH Location resource](https://docs.zushealth.com/reference/fhir-patch-location.md): Update a part of a Location resource.
+- [PUT Location resource](https://docs.zushealth.com/reference/fhir-put-location.md): Update an entire Location resource with new resource definition.
+- [POST Measure resource](https://docs.zushealth.com/reference/fhir-post-measure.md): Create a new Measure resource.
+- [DELETE Measure resource](https://docs.zushealth.com/reference/fhir-delete-measure.md): Delete a Measure resource.
+- [GET Measure by FHIR ID](https://docs.zushealth.com/reference/fhir-get-measure.md): Retrieve a Measure resource. The latest version of the resource is returned.
+- [PATCH Measure resource](https://docs.zushealth.com/reference/fhir-patch-measure.md): Update a part of a Measure resource.
+- [PUT Measure resource](https://docs.zushealth.com/reference/fhir-put-measure.md): Update an entire Measure resource with new resource definition.
+- [List MeasureReports](https://docs.zushealth.com/reference/fhir-search-measurereport.md): Search for MeasureReport resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST MeasureReport resource](https://docs.zushealth.com/reference/fhir-post-measurereport.md): Create a new MeasureReport resource.
+- [DELETE MeasureReport resource](https://docs.zushealth.com/reference/fhir-delete-measurereport.md): Delete a MeasureReport resource.
+- [GET MeasureReport by FHIR ID](https://docs.zushealth.com/reference/fhir-get-measurereport.md): Retrieve a MeasureReport resource. The latest version of the resource is returned.
+- [PATCH MeasureReport resource](https://docs.zushealth.com/reference/fhir-patch-measurereport.md): Update a part of a MeasureReport resource.
+- [PUT MeasureReport resource](https://docs.zushealth.com/reference/fhir-put-measurereport.md): Update an entire MeasureReport resource with new resource definition.
+- [List Medias](https://docs.zushealth.com/reference/fhir-search-media.md): Search for Media resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST Media resource](https://docs.zushealth.com/reference/fhir-post-media.md): Create a new Media resource.
+- [DELETE Media resource](https://docs.zushealth.com/reference/fhir-delete-media.md): Delete a Media resource.
+- [GET Media by FHIR ID](https://docs.zushealth.com/reference/fhir-get-media.md): Retrieve a Media resource. The latest version of the resource is returned.
+- [PATCH Media resource](https://docs.zushealth.com/reference/fhir-patch-media.md): Update a part of a Media resource.
+- [PUT Media resource](https://docs.zushealth.com/reference/fhir-put-media.md): Update an entire Media resource with new resource definition.
+- [List Medications](https://docs.zushealth.com/reference/fhir-search-medication.md): Search for Medication resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST Medication resource](https://docs.zushealth.com/reference/fhir-post-medication.md): Create a new Medication resource.
+- [DELETE Medication resource](https://docs.zushealth.com/reference/fhir-delete-medication.md): Delete a Medication resource.
+- [GET Medication by FHIR ID](https://docs.zushealth.com/reference/fhir-get-medication.md): Retrieve a Medication resource. The latest version of the resource is returned.
+- [PATCH Medication resource](https://docs.zushealth.com/reference/fhir-patch-medication.md): Update a part of a Medication resource.
+- [PUT Medication resource](https://docs.zushealth.com/reference/fhir-put-medication.md): Update an entire Medication resource with new resource definition.
+- [List MedicationAdministrations](https://docs.zushealth.com/reference/fhir-search-medicationadministration.md): Search for MedicationAdministration resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST MedicationAdministration resource](https://docs.zushealth.com/reference/fhir-post-medicationadministration.md): Create a new MedicationAdministration resource.
+- [DELETE MedicationAdministration resource](https://docs.zushealth.com/reference/fhir-delete-medicationadministration.md): Delete a MedicationAdministration resource.
+- [GET MedicationAdministration by FHIR ID](https://docs.zushealth.com/reference/fhir-get-medicationadministration.md): Retrieve a MedicationAdministration resource. The latest version of the resource is returned.
+- [PATCH MedicationAdministration resource](https://docs.zushealth.com/reference/fhir-patch-medicationadministration.md): Update a part of a MedicationAdministration resource.
+- [PUT MedicationAdministration resource](https://docs.zushealth.com/reference/fhir-put-medicationadministration.md): Update an entire MedicationAdministration resource with new resource definition.
+- [List MedicationDispenses](https://docs.zushealth.com/reference/fhir-search-medicationdispense.md): Search for MedicationDispense resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST MedicationDispense resource](https://docs.zushealth.com/reference/fhir-post-medicationdispense.md): Create a new MedicationDispense resource.
+- [DELETE MedicationDispense resource](https://docs.zushealth.com/reference/fhir-delete-medicationdispense.md): Delete a MedicationDispense resource.
+- [GET MedicationDispense by FHIR ID](https://docs.zushealth.com/reference/fhir-get-medicationdispense.md): Retrieve a MedicationDispense resource. The latest version of the resource is returned.
+- [PATCH MedicationDispense resource](https://docs.zushealth.com/reference/fhir-patch-medicationdispense.md): Update a part of a MedicationDispense resource.
+- [PUT MedicationDispense resource](https://docs.zushealth.com/reference/fhir-put-medicationdispense.md): Update an entire MedicationDispense resource with new resource definition.
+- [POST MedicationKnowledge resource](https://docs.zushealth.com/reference/fhir-post-medicationknowledge.md): Create a new MedicationKnowledge resource.
+- [DELETE MedicationKnowledge resource](https://docs.zushealth.com/reference/fhir-delete-medicationknowledge.md): Delete a MedicationKnowledge resource.
+- [GET MedicationKnowledge by FHIR ID](https://docs.zushealth.com/reference/fhir-get-medicationknowledge.md): Retrieve a MedicationKnowledge resource. The latest version of the resource is returned.
+- [PATCH MedicationKnowledge resource](https://docs.zushealth.com/reference/fhir-patch-medicationknowledge.md): Update a part of a MedicationKnowledge resource.
+- [PUT MedicationKnowledge resource](https://docs.zushealth.com/reference/fhir-put-medicationknowledge.md): Update an entire MedicationKnowledge resource with new resource definition.
+- [List MedicationRequests](https://docs.zushealth.com/reference/fhir-search-medicationrequest.md): Search for MedicationRequest resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST MedicationRequest resource](https://docs.zushealth.com/reference/fhir-post-medicationrequest.md): Create a new MedicationRequest resource.
+- [DELETE MedicationRequest resource](https://docs.zushealth.com/reference/fhir-delete-medicationrequest.md): Delete a MedicationRequest resource.
+- [GET MedicationRequest by FHIR ID](https://docs.zushealth.com/reference/fhir-get-medicationrequest.md): Retrieve a MedicationRequest resource. The latest version of the resource is returned.
+- [PATCH MedicationRequest resource](https://docs.zushealth.com/reference/fhir-patch-medicationrequest.md): Update a part of a MedicationRequest resource.
+- [PUT MedicationRequest resource](https://docs.zushealth.com/reference/fhir-put-medicationrequest.md): Update an entire MedicationRequest resource with new resource definition.
+- [List MedicationStatements](https://docs.zushealth.com/reference/fhir-search-medicationstatement.md): Search for MedicationStatement resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST MedicationStatement resource](https://docs.zushealth.com/reference/fhir-post-medicationstatement.md): Create a new MedicationStatement resource.
+- [DELETE MedicationStatement resource](https://docs.zushealth.com/reference/fhir-delete-medicationstatement.md): Delete a MedicationStatement resource.
+- [GET MedicationStatement by FHIR ID](https://docs.zushealth.com/reference/fhir-get-medicationstatement.md): Retrieve a MedicationStatement resource. The latest version of the resource is returned.
+- [PATCH MedicationStatement resource](https://docs.zushealth.com/reference/fhir-patch-medicationstatement.md): Update a part of a MedicationStatement resource.
+- [PUT MedicationStatement resource](https://docs.zushealth.com/reference/fhir-put-medicationstatement.md): Update an entire MedicationStatement resource with new resource definition.
+- [POST MedicinalProduct resource](https://docs.zushealth.com/reference/fhir-post-medicinalproduct.md): Create a new MedicinalProduct resource.
+- [DELETE MedicinalProduct resource](https://docs.zushealth.com/reference/fhir-delete-medicinalproduct.md): Delete a MedicinalProduct resource.
+- [GET MedicinalProduct by FHIR ID](https://docs.zushealth.com/reference/fhir-get-medicinalproduct.md): Retrieve a MedicinalProduct resource. The latest version of the resource is returned.
+- [PATCH MedicinalProduct resource](https://docs.zushealth.com/reference/fhir-patch-medicinalproduct.md): Update a part of a MedicinalProduct resource.
+- [PUT MedicinalProduct resource](https://docs.zushealth.com/reference/fhir-put-medicinalproduct.md): Update an entire MedicinalProduct resource with new resource definition.
+- [POST MedicinalProductAuthorization resource](https://docs.zushealth.com/reference/fhir-post-medicinalproductauthorization.md): Create a new MedicinalProductAuthorization resource.
+- [DELETE MedicinalProductAuthorization resource](https://docs.zushealth.com/reference/fhir-delete-medicinalproductauthorization.md): Delete a MedicinalProductAuthorization resource.
+- [GET MedicinalProductAuthorization by FHIR ID](https://docs.zushealth.com/reference/fhir-get-medicinalproductauthorization.md): Retrieve a MedicinalProductAuthorization resource. The latest version of the resource is returned.
+- [PATCH MedicinalProductAuthorization resource](https://docs.zushealth.com/reference/fhir-patch-medicinalproductauthorization.md): Update a part of a MedicinalProductAuthorization resource.
+- [PUT MedicinalProductAuthorization resource](https://docs.zushealth.com/reference/fhir-put-medicinalproductauthorization.md): Update an entire MedicinalProductAuthorization resource with new resource definition.
+- [POST MedicinalProductContraindication resource](https://docs.zushealth.com/reference/fhir-post-medicinalproductcontraindication.md): Create a new MedicinalProductContraindication resource.
+- [DELETE MedicinalProductContraindication resource](https://docs.zushealth.com/reference/fhir-delete-medicinalproductcontraindication.md): Delete a MedicinalProductContraindication resource.
+- [GET MedicinalProductContraindication by FHIR ID](https://docs.zushealth.com/reference/fhir-get-medicinalproductcontraindication.md): Retrieve a MedicinalProductContraindication resource. The latest version of the resource is returned.
+- [PATCH MedicinalProductContraindication resource](https://docs.zushealth.com/reference/fhir-patch-medicinalproductcontraindication.md): Update a part of a MedicinalProductContraindication resource.
+- [PUT MedicinalProductContraindication resource](https://docs.zushealth.com/reference/fhir-put-medicinalproductcontraindication.md): Update an entire MedicinalProductContraindication resource with new resource definition.
+- [POST MedicinalProductIndication resource](https://docs.zushealth.com/reference/fhir-post-medicinalproductindication.md): Create a new MedicinalProductIndication resource.
+- [DELETE MedicinalProductIndication resource](https://docs.zushealth.com/reference/fhir-delete-medicinalproductindication.md): Delete a MedicinalProductIndication resource.
+- [GET MedicinalProductIndication by FHIR ID](https://docs.zushealth.com/reference/fhir-get-medicinalproductindication.md): Retrieve a MedicinalProductIndication resource. The latest version of the resource is returned.
+- [PATCH MedicinalProductIndication resource](https://docs.zushealth.com/reference/fhir-patch-medicinalproductindication.md): Update a part of a MedicinalProductIndication resource.
+- [PUT MedicinalProductIndication resource](https://docs.zushealth.com/reference/fhir-put-medicinalproductindication.md): Update an entire MedicinalProductIndication resource with new resource definition.
+- [POST MedicinalProductIngredient resource](https://docs.zushealth.com/reference/fhir-post-medicinalproductingredient.md): Create a new MedicinalProductIngredient resource.
+- [DELETE MedicinalProductIngredient resource](https://docs.zushealth.com/reference/fhir-delete-medicinalproductingredient.md): Delete a MedicinalProductIngredient resource.
+- [GET MedicinalProductIngredient by FHIR ID](https://docs.zushealth.com/reference/fhir-get-medicinalproductingredient.md): Retrieve a MedicinalProductIngredient resource. The latest version of the resource is returned.
+- [PATCH MedicinalProductIngredient resource](https://docs.zushealth.com/reference/fhir-patch-medicinalproductingredient.md): Update a part of a MedicinalProductIngredient resource.
+- [PUT MedicinalProductIngredient resource](https://docs.zushealth.com/reference/fhir-put-medicinalproductingredient.md): Update an entire MedicinalProductIngredient resource with new resource definition.
+- [POST MedicinalProductInteraction resource](https://docs.zushealth.com/reference/fhir-post-medicinalproductinteraction.md): Create a new MedicinalProductInteraction resource.
+- [DELETE MedicinalProductInteraction resource](https://docs.zushealth.com/reference/fhir-delete-medicinalproductinteraction.md): Delete a MedicinalProductInteraction resource.
+- [GET MedicinalProductInteraction by FHIR ID](https://docs.zushealth.com/reference/fhir-get-medicinalproductinteraction.md): Retrieve a MedicinalProductInteraction resource. The latest version of the resource is returned.
+- [PATCH MedicinalProductInteraction resource](https://docs.zushealth.com/reference/fhir-patch-medicinalproductinteraction.md): Update a part of a MedicinalProductInteraction resource.
+- [PUT MedicinalProductInteraction resource](https://docs.zushealth.com/reference/fhir-put-medicinalproductinteraction.md): Update an entire MedicinalProductInteraction resource with new resource definition.
+- [POST MedicinalProductManufactured resource](https://docs.zushealth.com/reference/fhir-post-medicinalproductmanufactured.md): Create a new MedicinalProductManufactured resource.
+- [DELETE MedicinalProductManufactured resource](https://docs.zushealth.com/reference/fhir-delete-medicinalproductmanufactured.md): Delete a MedicinalProductManufactured resource.
+- [GET MedicinalProductManufactured by FHIR ID](https://docs.zushealth.com/reference/fhir-get-medicinalproductmanufactured.md): Retrieve a MedicinalProductManufactured resource. The latest version of the resource is returned.
+- [PATCH MedicinalProductManufactured resource](https://docs.zushealth.com/reference/fhir-patch-medicinalproductmanufactured.md): Update a part of a MedicinalProductManufactured resource.
+- [PUT MedicinalProductManufactured resource](https://docs.zushealth.com/reference/fhir-put-medicinalproductmanufactured.md): Update an entire MedicinalProductManufactured resource with new resource definition.
+- [POST MedicinalProductPackaged resource](https://docs.zushealth.com/reference/fhir-post-medicinalproductpackaged.md): Create a new MedicinalProductPackaged resource.
+- [DELETE MedicinalProductPackaged resource](https://docs.zushealth.com/reference/fhir-delete-medicinalproductpackaged.md): Delete a MedicinalProductPackaged resource.
+- [GET MedicinalProductPackaged by FHIR ID](https://docs.zushealth.com/reference/fhir-get-medicinalproductpackaged.md): Retrieve a MedicinalProductPackaged resource. The latest version of the resource is returned.
+- [PATCH MedicinalProductPackaged resource](https://docs.zushealth.com/reference/fhir-patch-medicinalproductpackaged.md): Update a part of a MedicinalProductPackaged resource.
+- [PUT MedicinalProductPackaged resource](https://docs.zushealth.com/reference/fhir-put-medicinalproductpackaged.md): Update an entire MedicinalProductPackaged resource with new resource definition.
+- [POST MedicinalProductPharmaceutical resource](https://docs.zushealth.com/reference/fhir-post-medicinalproductpharmaceutical.md): Create a new MedicinalProductPharmaceutical resource.
+- [DELETE MedicinalProductPharmaceutical resource](https://docs.zushealth.com/reference/fhir-delete-medicinalproductpharmaceutical.md): Delete a MedicinalProductPharmaceutical resource.
+- [GET MedicinalProductPharmaceutical by FHIR ID](https://docs.zushealth.com/reference/fhir-get-medicinalproductpharmaceutical.md): Retrieve a MedicinalProductPharmaceutical resource. The latest version of the resource is returned.
+- [PATCH MedicinalProductPharmaceutical resource](https://docs.zushealth.com/reference/fhir-patch-medicinalproductpharmaceutical.md): Update a part of a MedicinalProductPharmaceutical resource.
+- [PUT MedicinalProductPharmaceutical resource](https://docs.zushealth.com/reference/fhir-put-medicinalproductpharmaceutical.md): Update an entire MedicinalProductPharmaceutical resource with new resource definition.
+- [POST MedicinalProductUndesirableEffect resource](https://docs.zushealth.com/reference/fhir-post-medicinalproductundesirableeffect.md): Create a new MedicinalProductUndesirableEffect resource.
+- [DELETE MedicinalProductUndesirableEffect resource](https://docs.zushealth.com/reference/fhir-delete-medicinalproductundesirableeffect.md): Delete a MedicinalProductUndesirableEffect resource.
+- [GET MedicinalProductUndesirableEffect by FHIR ID](https://docs.zushealth.com/reference/fhir-get-medicinalproductundesirableeffect.md): Retrieve a MedicinalProductUndesirableEffect resource. The latest version of the resource is returned.
+- [PATCH MedicinalProductUndesirableEffect resource](https://docs.zushealth.com/reference/fhir-patch-medicinalproductundesirableeffect.md): Update a part of a MedicinalProductUndesirableEffect resource.
+- [PUT MedicinalProductUndesirableEffect resource](https://docs.zushealth.com/reference/fhir-put-medicinalproductundesirableeffect.md): Update an entire MedicinalProductUndesirableEffect resource with new resource definition.
+- [List MolecularSequences](https://docs.zushealth.com/reference/fhir-search-molecularsequence.md): Search for MolecularSequence resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST MolecularSequence resource](https://docs.zushealth.com/reference/fhir-post-molecularsequence.md): Create a new MolecularSequence resource.
+- [DELETE MolecularSequence resource](https://docs.zushealth.com/reference/fhir-delete-molecularsequence.md): Delete a MolecularSequence resource.
+- [GET MolecularSequence by FHIR ID](https://docs.zushealth.com/reference/fhir-get-molecularsequence.md): Retrieve a MolecularSequence resource. The latest version of the resource is returned.
+- [PATCH MolecularSequence resource](https://docs.zushealth.com/reference/fhir-patch-molecularsequence.md): Update a part of a MolecularSequence resource.
+- [PUT MolecularSequence resource](https://docs.zushealth.com/reference/fhir-put-molecularsequence.md): Update an entire MolecularSequence resource with new resource definition.
+- [POST NamingSystem resource](https://docs.zushealth.com/reference/fhir-post-namingsystem.md): Create a new NamingSystem resource.
+- [DELETE NamingSystem resource](https://docs.zushealth.com/reference/fhir-delete-namingsystem.md): Delete a NamingSystem resource.
+- [GET NamingSystem by FHIR ID](https://docs.zushealth.com/reference/fhir-get-namingsystem.md): Retrieve a NamingSystem resource. The latest version of the resource is returned.
+- [PATCH NamingSystem resource](https://docs.zushealth.com/reference/fhir-patch-namingsystem.md): Update a part of a NamingSystem resource.
+- [PUT NamingSystem resource](https://docs.zushealth.com/reference/fhir-put-namingsystem.md): Update an entire NamingSystem resource with new resource definition.
+- [List NutritionOrders](https://docs.zushealth.com/reference/fhir-search-nutritionorder.md): Search for NutritionOrder resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST NutritionOrder resource](https://docs.zushealth.com/reference/fhir-post-nutritionorder.md): Create a new NutritionOrder resource.
+- [DELETE NutritionOrder resource](https://docs.zushealth.com/reference/fhir-delete-nutritionorder.md): Delete a NutritionOrder resource.
+- [GET NutritionOrder by FHIR ID](https://docs.zushealth.com/reference/fhir-get-nutritionorder.md): Retrieve a NutritionOrder resource. The latest version of the resource is returned.
+- [PATCH NutritionOrder resource](https://docs.zushealth.com/reference/fhir-patch-nutritionorder.md): Update a part of a NutritionOrder resource.
+- [PUT NutritionOrder resource](https://docs.zushealth.com/reference/fhir-put-nutritionorder.md): Update an entire NutritionOrder resource with new resource definition.
+- [List Observations](https://docs.zushealth.com/reference/fhir-search-observation.md): Search for Observation resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST Observation resource](https://docs.zushealth.com/reference/fhir-post-observation.md): Create a new Observation resource.
+- [DELETE Observation resource](https://docs.zushealth.com/reference/fhir-delete-observation.md): Delete an Observation resource.
+- [GET Observation by FHIR ID](https://docs.zushealth.com/reference/fhir-get-observation.md): Retrieve an Observation resource. The latest version of the resource is returned.
+- [PATCH Observation resource](https://docs.zushealth.com/reference/fhir-patch-observation.md): Update a part of an Observation resource.
+- [PUT Observation resource](https://docs.zushealth.com/reference/fhir-put-observation.md): Update an entire Observation resource with new resource definition.
+- [POST ObservationDefinition resource](https://docs.zushealth.com/reference/fhir-post-observationdefinition.md): Create a new ObservationDefinition resource.
+- [DELETE ObservationDefinition resource](https://docs.zushealth.com/reference/fhir-delete-observationdefinition.md): Delete an ObservationDefinition resource.
+- [GET ObservationDefinition by FHIR ID](https://docs.zushealth.com/reference/fhir-get-observationdefinition.md): Retrieve an ObservationDefinition resource. The latest version of the resource is returned.
+- [PATCH ObservationDefinition resource](https://docs.zushealth.com/reference/fhir-patch-observationdefinition.md): Update a part of an ObservationDefinition resource.
+- [PUT ObservationDefinition resource](https://docs.zushealth.com/reference/fhir-put-observationdefinition.md): Update an entire ObservationDefinition resource with new resource definition.
+- [List Organizations](https://docs.zushealth.com/reference/fhir-search-organization.md): Search for Organization resources. Search must be scoped to one of the supported parameters. If no parameter is passed it will default to a builder query. The latest version of each resource is returned.
+- [POST Organization resource](https://docs.zushealth.com/reference/fhir-post-organization.md): Create a new Organization resource.
+- [DELETE Organization resource](https://docs.zushealth.com/reference/fhir-delete-organization.md): Delete an Organization resource.
+- [GET Organization by FHIR ID](https://docs.zushealth.com/reference/fhir-get-organization.md): Retrieve an Organization resource. The latest version of the resource is returned.
+- [PATCH Organization resource](https://docs.zushealth.com/reference/fhir-patch-organization.md): Update a part of an Organization resource.
+- [PUT Organization resource](https://docs.zushealth.com/reference/fhir-put-organization.md): Update an entire Organization resource with new resource definition.
+- [POST OrganizationAffiliation resource](https://docs.zushealth.com/reference/fhir-post-organizationaffiliation.md): Create a new OrganizationAffiliation resource.
+- [DELETE OrganizationAffiliation resource](https://docs.zushealth.com/reference/fhir-delete-organizationaffiliation.md): Delete an OrganizationAffiliation resource.
+- [GET OrganizationAffiliation by FHIR ID](https://docs.zushealth.com/reference/fhir-get-organizationaffiliation.md): Retrieve an OrganizationAffiliation resource. The latest version of the resource is returned.
+- [PATCH OrganizationAffiliation resource](https://docs.zushealth.com/reference/fhir-patch-organizationaffiliation.md): Update a part of an OrganizationAffiliation resource.
+- [PUT OrganizationAffiliation resource](https://docs.zushealth.com/reference/fhir-put-organizationaffiliation.md): Update an entire OrganizationAffiliation resource with new resource definition.
+- [List Patients](https://docs.zushealth.com/reference/fhir-search-patient.md): Search for Patient resources. Search must be scoped to one of the supported parameters. If no parameter is passed it will default to a builder query. The latest version of each resource is returned.
+- [POST Patient resource](https://docs.zushealth.com/reference/fhir-post-patient.md): Create a new Patient resource.
+- [DELETE Patient resource](https://docs.zushealth.com/reference/fhir-delete-patient.md): Delete a Patient resource.
+- [GET Patient by FHIR ID](https://docs.zushealth.com/reference/fhir-get-patient.md): Retrieve a Patient resource. The latest version of the resource is returned.
+- [PATCH Patient resource](https://docs.zushealth.com/reference/fhir-patch-patient.md): Update a part of a Patient resource.
+- [PUT Patient resource](https://docs.zushealth.com/reference/fhir-put-patient.md): Update an entire Patient resource with new resource definition.
+- [POST PaymentNotice resource](https://docs.zushealth.com/reference/fhir-post-paymentnotice.md): Create a new PaymentNotice resource.
+- [DELETE PaymentNotice resource](https://docs.zushealth.com/reference/fhir-delete-paymentnotice.md): Delete a PaymentNotice resource.
+- [GET PaymentNotice by FHIR ID](https://docs.zushealth.com/reference/fhir-get-paymentnotice.md): Retrieve a PaymentNotice resource. The latest version of the resource is returned.
+- [PATCH PaymentNotice resource](https://docs.zushealth.com/reference/fhir-patch-paymentnotice.md): Update a part of a PaymentNotice resource.
+- [PUT PaymentNotice resource](https://docs.zushealth.com/reference/fhir-put-paymentnotice.md): Update an entire PaymentNotice resource with new resource definition.
+- [POST PaymentReconciliation resource](https://docs.zushealth.com/reference/fhir-post-paymentreconciliation.md): Create a new PaymentReconciliation resource.
+- [DELETE PaymentReconciliation resource](https://docs.zushealth.com/reference/fhir-delete-paymentreconciliation.md): Delete a PaymentReconciliation resource.
+- [GET PaymentReconciliation by FHIR ID](https://docs.zushealth.com/reference/fhir-get-paymentreconciliation.md): Retrieve a PaymentReconciliation resource. The latest version of the resource is returned.
+- [PATCH PaymentReconciliation resource](https://docs.zushealth.com/reference/fhir-patch-paymentreconciliation.md): Update a part of a PaymentReconciliation resource.
+- [PUT PaymentReconciliation resource](https://docs.zushealth.com/reference/fhir-put-paymentreconciliation.md): Update an entire PaymentReconciliation resource with new resource definition.
+- [List Persons](https://docs.zushealth.com/reference/fhir-search-person.md): Search for Person resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST Person resource](https://docs.zushealth.com/reference/fhir-post-person.md): Create a new Person resource.
+- [DELETE Person resource](https://docs.zushealth.com/reference/fhir-delete-person.md): Delete a Person resource.
+- [GET Person by FHIR ID](https://docs.zushealth.com/reference/fhir-get-person.md): Retrieve a Person resource. The latest version of the resource is returned.
+- [PATCH Person resource](https://docs.zushealth.com/reference/fhir-patch-person.md): Update a part of a Person resource.
+- [PUT Person resource](https://docs.zushealth.com/reference/fhir-put-person.md): Update an entire Person resource with new resource definition.
+- [POST PlanDefinition resource](https://docs.zushealth.com/reference/fhir-post-plandefinition.md): Create a new PlanDefinition resource.
+- [DELETE PlanDefinition resource](https://docs.zushealth.com/reference/fhir-delete-plandefinition.md): Delete a PlanDefinition resource.
+- [GET PlanDefinition by FHIR ID](https://docs.zushealth.com/reference/fhir-get-plandefinition.md): Retrieve a PlanDefinition resource. The latest version of the resource is returned.
+- [PATCH PlanDefinition resource](https://docs.zushealth.com/reference/fhir-patch-plandefinition.md): Update a part of a PlanDefinition resource.
+- [PUT PlanDefinition resource](https://docs.zushealth.com/reference/fhir-put-plandefinition.md): Update an entire PlanDefinition resource with new resource definition.
+- [List Practitioners](https://docs.zushealth.com/reference/fhir-search-practitioner.md): Search for Practitioner resources. Search must be scoped to one of the supported parameters. If no parameter is passed it will default to a builder query. The latest version of each resource is returned.
+- [POST Practitioner resource](https://docs.zushealth.com/reference/fhir-post-practitioner.md): Create a new Practitioner resource.
+- [DELETE Practitioner resource](https://docs.zushealth.com/reference/fhir-delete-practitioner.md): Delete a Practitioner resource.
+- [GET Practitioner by FHIR ID](https://docs.zushealth.com/reference/fhir-get-practitioner.md): Retrieve a Practitioner resource. The latest version of the resource is returned.
+- [PATCH Practitioner resource](https://docs.zushealth.com/reference/fhir-patch-practitioner.md): Update a part of a Practitioner resource.
+- [PUT Practitioner resource](https://docs.zushealth.com/reference/fhir-put-practitioner.md): Update an entire Practitioner resource with new resource definition.
+- [POST PractitionerRole resource](https://docs.zushealth.com/reference/fhir-post-practitionerrole.md): Create a new PractitionerRole resource.
+- [DELETE PractitionerRole resource](https://docs.zushealth.com/reference/fhir-delete-practitionerrole.md): Delete a PractitionerRole resource.
+- [GET PractitionerRole by FHIR ID](https://docs.zushealth.com/reference/fhir-get-practitionerrole.md): Retrieve a PractitionerRole resource. The latest version of the resource is returned.
+- [PATCH PractitionerRole resource](https://docs.zushealth.com/reference/fhir-patch-practitionerrole.md): Update a part of a PractitionerRole resource.
+- [PUT PractitionerRole resource](https://docs.zushealth.com/reference/fhir-put-practitionerrole.md): Update an entire PractitionerRole resource with new resource definition.
+- [List Procedures](https://docs.zushealth.com/reference/fhir-search-procedure.md): Search for Procedure resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST Procedure resource](https://docs.zushealth.com/reference/fhir-post-procedure.md): Create a new Procedure resource.
+- [DELETE Procedure resource](https://docs.zushealth.com/reference/fhir-delete-procedure.md): Delete a Procedure resource.
+- [GET Procedure by FHIR ID](https://docs.zushealth.com/reference/fhir-get-procedure.md): Retrieve a Procedure resource. The latest version of the resource is returned.
+- [PATCH Procedure resource](https://docs.zushealth.com/reference/fhir-patch-procedure.md): Update a part of a Procedure resource.
+- [PUT Procedure resource](https://docs.zushealth.com/reference/fhir-put-procedure.md): Update an entire Procedure resource with new resource definition.
+- [List Provenances](https://docs.zushealth.com/reference/fhir-search-provenance.md): Search for Provenance resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST Provenance resource](https://docs.zushealth.com/reference/fhir-post-provenance.md): Create a new Provenance resource.
+- [DELETE Provenance resource](https://docs.zushealth.com/reference/fhir-delete-provenance.md): Delete a Provenance resource.
+- [GET Provenance by FHIR ID](https://docs.zushealth.com/reference/fhir-get-provenance.md): Retrieve a Provenance resource. The latest version of the resource is returned.
+- [PATCH Provenance resource](https://docs.zushealth.com/reference/fhir-patch-provenance.md): Update a part of a Provenance resource.
+- [PUT Provenance resource](https://docs.zushealth.com/reference/fhir-put-provenance.md): Update an entire Provenance resource with new resource definition.
+- [POST Questionnaire resource](https://docs.zushealth.com/reference/fhir-post-questionnaire.md): Create a new Questionnaire resource.
+- [DELETE Questionnaire resource](https://docs.zushealth.com/reference/fhir-delete-questionnaire.md): Delete a Questionnaire resource.
+- [GET Questionnaire by FHIR ID](https://docs.zushealth.com/reference/fhir-get-questionnaire.md): Retrieve a Questionnaire resource. The latest version of the resource is returned.
+- [PATCH Questionnaire resource](https://docs.zushealth.com/reference/fhir-patch-questionnaire.md): Update a part of a Questionnaire resource.
+- [PUT Questionnaire resource](https://docs.zushealth.com/reference/fhir-put-questionnaire.md): Update an entire Questionnaire resource with new resource definition.
+- [List QuestionnaireResponses](https://docs.zushealth.com/reference/fhir-search-questionnaireresponse.md): Search for QuestionnaireResponse resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST QuestionnaireResponse resource](https://docs.zushealth.com/reference/fhir-post-questionnaireresponse.md): Create a new QuestionnaireResponse resource.
+- [DELETE QuestionnaireResponse resource](https://docs.zushealth.com/reference/fhir-delete-questionnaireresponse.md): Delete a QuestionnaireResponse resource.
+- [GET QuestionnaireResponse by FHIR ID](https://docs.zushealth.com/reference/fhir-get-questionnaireresponse.md): Retrieve a QuestionnaireResponse resource. The latest version of the resource is returned.
+- [PATCH QuestionnaireResponse resource](https://docs.zushealth.com/reference/fhir-patch-questionnaireresponse.md): Update a part of a QuestionnaireResponse resource.
+- [PUT QuestionnaireResponse resource](https://docs.zushealth.com/reference/fhir-put-questionnaireresponse.md): Update an entire QuestionnaireResponse resource with new resource definition.
+- [List RelatedPersons](https://docs.zushealth.com/reference/fhir-search-relatedperson.md): Search for RelatedPerson resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST RelatedPerson resource](https://docs.zushealth.com/reference/fhir-post-relatedperson.md): Create a new RelatedPerson resource.
+- [DELETE RelatedPerson resource](https://docs.zushealth.com/reference/fhir-delete-relatedperson.md): Delete a RelatedPerson resource.
+- [GET RelatedPerson by FHIR ID](https://docs.zushealth.com/reference/fhir-get-relatedperson.md): Retrieve a RelatedPerson resource. The latest version of the resource is returned.
+- [PATCH RelatedPerson resource](https://docs.zushealth.com/reference/fhir-patch-relatedperson.md): Update a part of a RelatedPerson resource.
+- [PUT RelatedPerson resource](https://docs.zushealth.com/reference/fhir-put-relatedperson.md): Update an entire RelatedPerson resource with new resource definition.
+- [List RequestGroups](https://docs.zushealth.com/reference/fhir-search-requestgroup.md): Search for RequestGroup resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST RequestGroup resource](https://docs.zushealth.com/reference/fhir-post-requestgroup.md): Create a new RequestGroup resource.
+- [DELETE RequestGroup resource](https://docs.zushealth.com/reference/fhir-delete-requestgroup.md): Delete a RequestGroup resource.
+- [GET RequestGroup by FHIR ID](https://docs.zushealth.com/reference/fhir-get-requestgroup.md): Retrieve a RequestGroup resource. The latest version of the resource is returned.
+- [PATCH RequestGroup resource](https://docs.zushealth.com/reference/fhir-patch-requestgroup.md): Update a part of a RequestGroup resource.
+- [PUT RequestGroup resource](https://docs.zushealth.com/reference/fhir-put-requestgroup.md): Update an entire RequestGroup resource with new resource definition.
+- [POST ResearchDefinition resource](https://docs.zushealth.com/reference/fhir-post-researchdefinition.md): Create a new ResearchDefinition resource.
+- [DELETE ResearchDefinition resource](https://docs.zushealth.com/reference/fhir-delete-researchdefinition.md): Delete a ResearchDefinition resource.
+- [GET ResearchDefinition by FHIR ID](https://docs.zushealth.com/reference/fhir-get-researchdefinition.md): Retrieve a ResearchDefinition resource. The latest version of the resource is returned.
+- [PATCH ResearchDefinition resource](https://docs.zushealth.com/reference/fhir-patch-researchdefinition.md): Update a part of a ResearchDefinition resource.
+- [PUT ResearchDefinition resource](https://docs.zushealth.com/reference/fhir-put-researchdefinition.md): Update an entire ResearchDefinition resource with new resource definition.
+- [POST ResearchElementDefinition resource](https://docs.zushealth.com/reference/fhir-post-researchelementdefinition.md): Create a new ResearchElementDefinition resource.
+- [DELETE ResearchElementDefinition resource](https://docs.zushealth.com/reference/fhir-delete-researchelementdefinition.md): Delete a ResearchElementDefinition resource.
+- [GET ResearchElementDefinition by FHIR ID](https://docs.zushealth.com/reference/fhir-get-researchelementdefinition.md): Retrieve a ResearchElementDefinition resource. The latest version of the resource is returned.
+- [PATCH ResearchElementDefinition resource](https://docs.zushealth.com/reference/fhir-patch-researchelementdefinition.md): Update a part of a ResearchElementDefinition resource.
+- [PUT ResearchElementDefinition resource](https://docs.zushealth.com/reference/fhir-put-researchelementdefinition.md): Update an entire ResearchElementDefinition resource with new resource definition.
+- [POST ResearchStudy resource](https://docs.zushealth.com/reference/fhir-post-researchstudy.md): Create a new ResearchStudy resource.
+- [DELETE ResearchStudy resource](https://docs.zushealth.com/reference/fhir-delete-researchstudy.md): Delete a ResearchStudy resource.
+- [GET ResearchStudy by FHIR ID](https://docs.zushealth.com/reference/fhir-get-researchstudy.md): Retrieve a ResearchStudy resource. The latest version of the resource is returned.
+- [PATCH ResearchStudy resource](https://docs.zushealth.com/reference/fhir-patch-researchstudy.md): Update a part of a ResearchStudy resource.
+- [PUT ResearchStudy resource](https://docs.zushealth.com/reference/fhir-put-researchstudy.md): Update an entire ResearchStudy resource with new resource definition.
+- [List ResearchSubjects](https://docs.zushealth.com/reference/fhir-search-researchsubject.md): Search for ResearchSubject resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST ResearchSubject resource](https://docs.zushealth.com/reference/fhir-post-researchsubject.md): Create a new ResearchSubject resource.
+- [DELETE ResearchSubject resource](https://docs.zushealth.com/reference/fhir-delete-researchsubject.md): Delete a ResearchSubject resource.
+- [GET ResearchSubject by FHIR ID](https://docs.zushealth.com/reference/fhir-get-researchsubject.md): Retrieve a ResearchSubject resource. The latest version of the resource is returned.
+- [PATCH ResearchSubject resource](https://docs.zushealth.com/reference/fhir-patch-researchsubject.md): Update a part of a ResearchSubject resource.
+- [PUT ResearchSubject resource](https://docs.zushealth.com/reference/fhir-put-researchsubject.md): Update an entire ResearchSubject resource with new resource definition.
+- [List RiskAssessments](https://docs.zushealth.com/reference/fhir-search-riskassessment.md): Search for RiskAssessment resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST RiskAssessment resource](https://docs.zushealth.com/reference/fhir-post-riskassessment.md): Create a new RiskAssessment resource.
+- [DELETE RiskAssessment resource](https://docs.zushealth.com/reference/fhir-delete-riskassessment.md): Delete a RiskAssessment resource.
+- [GET RiskAssessment by FHIR ID](https://docs.zushealth.com/reference/fhir-get-riskassessment.md): Retrieve a RiskAssessment resource. The latest version of the resource is returned.
+- [PATCH RiskAssessment resource](https://docs.zushealth.com/reference/fhir-patch-riskassessment.md): Update a part of a RiskAssessment resource.
+- [PUT RiskAssessment resource](https://docs.zushealth.com/reference/fhir-put-riskassessment.md): Update an entire RiskAssessment resource with new resource definition.
+- [POST RiskEvidenceSynthesis resource](https://docs.zushealth.com/reference/fhir-post-riskevidencesynthesis.md): Create a new RiskEvidenceSynthesis resource.
+- [DELETE RiskEvidenceSynthesis resource](https://docs.zushealth.com/reference/fhir-delete-riskevidencesynthesis.md): Delete a RiskEvidenceSynthesis resource.
+- [GET RiskEvidenceSynthesis by FHIR ID](https://docs.zushealth.com/reference/fhir-get-riskevidencesynthesis.md): Retrieve a RiskEvidenceSynthesis resource. The latest version of the resource is returned.
+- [PATCH RiskEvidenceSynthesis resource](https://docs.zushealth.com/reference/fhir-patch-riskevidencesynthesis.md): Update a part of a RiskEvidenceSynthesis resource.
+- [PUT RiskEvidenceSynthesis resource](https://docs.zushealth.com/reference/fhir-put-riskevidencesynthesis.md): Update an entire RiskEvidenceSynthesis resource with new resource definition.
+- [List Schedules](https://docs.zushealth.com/reference/fhir-search-schedule.md): Search for Schedule resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST Schedule resource](https://docs.zushealth.com/reference/fhir-post-schedule.md): Create a new Schedule resource.
+- [DELETE Schedule resource](https://docs.zushealth.com/reference/fhir-delete-schedule.md): Delete a Schedule resource.
+- [GET Schedule by FHIR ID](https://docs.zushealth.com/reference/fhir-get-schedule.md): Retrieve a Schedule resource. The latest version of the resource is returned.
+- [PATCH Schedule resource](https://docs.zushealth.com/reference/fhir-patch-schedule.md): Update a part of a Schedule resource.
+- [PUT Schedule resource](https://docs.zushealth.com/reference/fhir-put-schedule.md): Update an entire Schedule resource with new resource definition.
+- [List ServiceRequests](https://docs.zushealth.com/reference/fhir-search-servicerequest.md): Search for ServiceRequest resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST ServiceRequest resource](https://docs.zushealth.com/reference/fhir-post-servicerequest.md): Create a new ServiceRequest resource.
+- [DELETE ServiceRequest resource](https://docs.zushealth.com/reference/fhir-delete-servicerequest.md): Delete a ServiceRequest resource.
+- [GET ServiceRequest by FHIR ID](https://docs.zushealth.com/reference/fhir-get-servicerequest.md): Retrieve a ServiceRequest resource. The latest version of the resource is returned.
+- [PATCH ServiceRequest resource](https://docs.zushealth.com/reference/fhir-patch-servicerequest.md): Update a part of a ServiceRequest resource.
+- [PUT ServiceRequest resource](https://docs.zushealth.com/reference/fhir-put-servicerequest.md): Update an entire ServiceRequest resource with new resource definition.
+- [POST Slot resource](https://docs.zushealth.com/reference/fhir-post-slot.md): Create a new Slot resource.
+- [DELETE Slot resource](https://docs.zushealth.com/reference/fhir-delete-slot.md): Delete a Slot resource.
+- [GET Slot by FHIR ID](https://docs.zushealth.com/reference/fhir-get-slot.md): Retrieve a Slot resource. The latest version of the resource is returned.
+- [PATCH Slot resource](https://docs.zushealth.com/reference/fhir-patch-slot.md): Update a part of a Slot resource.
+- [PUT Slot resource](https://docs.zushealth.com/reference/fhir-put-slot.md): Update an entire Slot resource with new resource definition.
+- [List Specimens](https://docs.zushealth.com/reference/fhir-search-specimen.md): Search for Specimen resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST Specimen resource](https://docs.zushealth.com/reference/fhir-post-specimen.md): Create a new Specimen resource.
+- [DELETE Specimen resource](https://docs.zushealth.com/reference/fhir-delete-specimen.md): Delete a Specimen resource.
+- [GET Specimen by FHIR ID](https://docs.zushealth.com/reference/fhir-get-specimen.md): Retrieve a Specimen resource. The latest version of the resource is returned.
+- [PATCH Specimen resource](https://docs.zushealth.com/reference/fhir-patch-specimen.md): Update a part of a Specimen resource.
+- [PUT Specimen resource](https://docs.zushealth.com/reference/fhir-put-specimen.md): Update an entire Specimen resource with new resource definition.
+- [POST SpecimenDefinition resource](https://docs.zushealth.com/reference/fhir-post-specimendefinition.md): Create a new SpecimenDefinition resource.
+- [DELETE SpecimenDefinition resource](https://docs.zushealth.com/reference/fhir-delete-specimendefinition.md): Delete a SpecimenDefinition resource.
+- [GET SpecimenDefinition by FHIR ID](https://docs.zushealth.com/reference/fhir-get-specimendefinition.md): Retrieve a SpecimenDefinition resource. The latest version of the resource is returned.
+- [PATCH SpecimenDefinition resource](https://docs.zushealth.com/reference/fhir-patch-specimendefinition.md): Update a part of a SpecimenDefinition resource.
+- [PUT SpecimenDefinition resource](https://docs.zushealth.com/reference/fhir-put-specimendefinition.md): Update an entire SpecimenDefinition resource with new resource definition.
+- [POST Substance resource](https://docs.zushealth.com/reference/fhir-post-substance.md): Create a new Substance resource.
+- [DELETE Substance resource](https://docs.zushealth.com/reference/fhir-delete-substance.md): Delete a Substance resource.
+- [GET Substance by FHIR ID](https://docs.zushealth.com/reference/fhir-get-substance.md): Retrieve a Substance resource. The latest version of the resource is returned.
+- [PATCH Substance resource](https://docs.zushealth.com/reference/fhir-patch-substance.md): Update a part of a Substance resource.
+- [PUT Substance resource](https://docs.zushealth.com/reference/fhir-put-substance.md): Update an entire Substance resource with new resource definition.
+- [POST SubstancePolymer resource](https://docs.zushealth.com/reference/fhir-post-substancepolymer.md): Create a new SubstancePolymer resource.
+- [DELETE SubstancePolymer resource](https://docs.zushealth.com/reference/fhir-delete-substancepolymer.md): Delete a SubstancePolymer resource.
+- [GET SubstancePolymer by FHIR ID](https://docs.zushealth.com/reference/fhir-get-substancepolymer.md): Retrieve a SubstancePolymer resource. The latest version of the resource is returned.
+- [PATCH SubstancePolymer resource](https://docs.zushealth.com/reference/fhir-patch-substancepolymer.md): Update a part of a SubstancePolymer resource.
+- [PUT SubstancePolymer resource](https://docs.zushealth.com/reference/fhir-put-substancepolymer.md): Update an entire SubstancePolymer resource with new resource definition.
+- [POST SubstanceProtein resource](https://docs.zushealth.com/reference/fhir-post-substanceprotein.md): Create a new SubstanceProtein resource.
+- [DELETE SubstanceProtein resource](https://docs.zushealth.com/reference/fhir-delete-substanceprotein.md): Delete a SubstanceProtein resource.
+- [GET SubstanceProtein by FHIR ID](https://docs.zushealth.com/reference/fhir-get-substanceprotein.md): Retrieve a SubstanceProtein resource. The latest version of the resource is returned.
+- [PATCH SubstanceProtein resource](https://docs.zushealth.com/reference/fhir-patch-substanceprotein.md): Update a part of a SubstanceProtein resource.
+- [PUT SubstanceProtein resource](https://docs.zushealth.com/reference/fhir-put-substanceprotein.md): Update an entire SubstanceProtein resource with new resource definition.
+- [POST SubstanceReferenceInformation resource](https://docs.zushealth.com/reference/fhir-post-substancereferenceinformation.md): Create a new SubstanceReferenceInformation resource.
+- [DELETE SubstanceReferenceInformation resource](https://docs.zushealth.com/reference/fhir-delete-substancereferenceinformation.md): Delete a SubstanceReferenceInformation resource.
+- [GET SubstanceReferenceInformation by FHIR ID](https://docs.zushealth.com/reference/fhir-get-substancereferenceinformation.md): Retrieve a SubstanceReferenceInformation resource. The latest version of the resource is returned.
+- [PATCH SubstanceReferenceInformation resource](https://docs.zushealth.com/reference/fhir-patch-substancereferenceinformation.md): Update a part of a SubstanceReferenceInformation resource.
+- [PUT SubstanceReferenceInformation resource](https://docs.zushealth.com/reference/fhir-put-substancereferenceinformation.md): Update an entire SubstanceReferenceInformation resource with new resource definition.
+- [POST SubstanceSpecification resource](https://docs.zushealth.com/reference/fhir-post-substancespecification.md): Create a new SubstanceSpecification resource.
+- [DELETE SubstanceSpecification resource](https://docs.zushealth.com/reference/fhir-delete-substancespecification.md): Delete a SubstanceSpecification resource.
+- [GET SubstanceSpecification by FHIR ID](https://docs.zushealth.com/reference/fhir-get-substancespecification.md): Retrieve a SubstanceSpecification resource. The latest version of the resource is returned.
+- [PATCH SubstanceSpecification resource](https://docs.zushealth.com/reference/fhir-patch-substancespecification.md): Update a part of a SubstanceSpecification resource.
+- [PUT SubstanceSpecification resource](https://docs.zushealth.com/reference/fhir-put-substancespecification.md): Update an entire SubstanceSpecification resource with new resource definition.
+- [POST SubstanceSourceMaterial resource](https://docs.zushealth.com/reference/fhir-post-substancesourcematerial.md): Create a new SubstanceSourceMaterial resource.
+- [DELETE SubstanceSourceMaterial resource](https://docs.zushealth.com/reference/fhir-delete-substancesourcematerial.md): Delete a SubstanceSourceMaterial resource.
+- [GET SubstanceSourceMaterial by FHIR ID](https://docs.zushealth.com/reference/fhir-get-substancesourcematerial.md): Retrieve a SubstanceSourceMaterial resource. The latest version of the resource is returned.
+- [PATCH SubstanceSourceMaterial resource](https://docs.zushealth.com/reference/fhir-patch-substancesourcematerial.md): Update a part of a SubstanceSourceMaterial resource.
+- [PUT SubstanceSourceMaterial resource](https://docs.zushealth.com/reference/fhir-put-substancesourcematerial.md): Update an entire SubstanceSourceMaterial resource with new resource definition.
+- [List SupplyDeliverys](https://docs.zushealth.com/reference/fhir-search-supplydelivery.md): Search for SupplyDelivery resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST SupplyDelivery resource](https://docs.zushealth.com/reference/fhir-post-supplydelivery.md): Create a new SupplyDelivery resource.
+- [DELETE SupplyDelivery resource](https://docs.zushealth.com/reference/fhir-delete-supplydelivery.md): Delete a SupplyDelivery resource.
+- [GET SupplyDelivery by FHIR ID](https://docs.zushealth.com/reference/fhir-get-supplydelivery.md): Retrieve a SupplyDelivery resource. The latest version of the resource is returned.
+- [PATCH SupplyDelivery resource](https://docs.zushealth.com/reference/fhir-patch-supplydelivery.md): Update a part of a SupplyDelivery resource.
+- [PUT SupplyDelivery resource](https://docs.zushealth.com/reference/fhir-put-supplydelivery.md): Update an entire SupplyDelivery resource with new resource definition.
+- [List SupplyRequests](https://docs.zushealth.com/reference/fhir-search-supplyrequest.md): Search for SupplyRequest resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST SupplyRequest resource](https://docs.zushealth.com/reference/fhir-post-supplyrequest.md): Create a new SupplyRequest resource.
+- [DELETE SupplyRequest resource](https://docs.zushealth.com/reference/fhir-delete-supplyrequest.md): Delete a SupplyRequest resource.
+- [GET SupplyRequest by FHIR ID](https://docs.zushealth.com/reference/fhir-get-supplyrequest.md): Retrieve a SupplyRequest resource. The latest version of the resource is returned.
+- [PATCH SupplyRequest resource](https://docs.zushealth.com/reference/fhir-patch-supplyrequest.md): Update a part of a SupplyRequest resource.
+- [PUT SupplyRequest resource](https://docs.zushealth.com/reference/fhir-put-supplyrequest.md): Update an entire SupplyRequest resource with new resource definition.
+- [List Tasks](https://docs.zushealth.com/reference/fhir-search-task.md): Search for Task resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST Task resource](https://docs.zushealth.com/reference/fhir-post-task.md): Create a new Task resource.
+- [DELETE Task resource](https://docs.zushealth.com/reference/fhir-delete-task.md): Delete a Task resource.
+- [GET Task by FHIR ID](https://docs.zushealth.com/reference/fhir-get-task.md): Retrieve a Task resource. The latest version of the resource is returned.
+- [PATCH Task resource](https://docs.zushealth.com/reference/fhir-patch-task.md): Update a part of a Task resource.
+- [PUT Task resource](https://docs.zushealth.com/reference/fhir-put-task.md): Update an entire Task resource with new resource definition.
+- [POST TerminologyCapabilities resource](https://docs.zushealth.com/reference/fhir-post-terminologycapabilities.md): Create a new TerminologyCapabilities resource.
+- [DELETE TerminologyCapabilities resource](https://docs.zushealth.com/reference/fhir-delete-terminologycapabilities.md): Delete a TerminologyCapabilities resource.
+- [GET TerminologyCapabilities by FHIR ID](https://docs.zushealth.com/reference/fhir-get-terminologycapabilities.md): Retrieve a TerminologyCapabilities resource. The latest version of the resource is returned.
+- [PATCH TerminologyCapabilities resource](https://docs.zushealth.com/reference/fhir-patch-terminologycapabilities.md): Update a part of a TerminologyCapabilities resource.
+- [PUT TerminologyCapabilities resource](https://docs.zushealth.com/reference/fhir-put-terminologycapabilities.md): Update an entire TerminologyCapabilities resource with new resource definition.
+- [POST TestReport resource](https://docs.zushealth.com/reference/fhir-post-testreport.md): Create a new TestReport resource.
+- [DELETE TestReport resource](https://docs.zushealth.com/reference/fhir-delete-testreport.md): Delete a TestReport resource.
+- [GET TestReport by FHIR ID](https://docs.zushealth.com/reference/fhir-get-testreport.md): Retrieve a TestReport resource. The latest version of the resource is returned.
+- [PATCH TestReport resource](https://docs.zushealth.com/reference/fhir-patch-testreport.md): Update a part of a TestReport resource.
+- [PUT TestReport resource](https://docs.zushealth.com/reference/fhir-put-testreport.md): Update an entire TestReport resource with new resource definition.
+- [POST TestScript resource](https://docs.zushealth.com/reference/fhir-post-testscript.md): Create a new TestScript resource.
+- [DELETE TestScript resource](https://docs.zushealth.com/reference/fhir-delete-testscript.md): Delete a TestScript resource.
+- [GET TestScript by FHIR ID](https://docs.zushealth.com/reference/fhir-get-testscript.md): Retrieve a TestScript resource. The latest version of the resource is returned.
+- [PATCH TestScript resource](https://docs.zushealth.com/reference/fhir-patch-testscript.md): Update a part of a TestScript resource.
+- [PUT TestScript resource](https://docs.zushealth.com/reference/fhir-put-testscript.md): Update an entire TestScript resource with new resource definition.
+- [POST VerificationResult resource](https://docs.zushealth.com/reference/fhir-post-verificationresult.md): Create a new VerificationResult resource.
+- [DELETE VerificationResult resource](https://docs.zushealth.com/reference/fhir-delete-verificationresult.md): Delete a VerificationResult resource.
+- [GET VerificationResult by FHIR ID](https://docs.zushealth.com/reference/fhir-get-verificationresult.md): Retrieve a VerificationResult resource. The latest version of the resource is returned.
+- [PATCH VerificationResult resource](https://docs.zushealth.com/reference/fhir-patch-verificationresult.md): Update a part of a VerificationResult resource.
+- [PUT VerificationResult resource](https://docs.zushealth.com/reference/fhir-put-verificationresult.md): Update an entire VerificationResult resource with new resource definition.
+- [List VisionPrescriptions](https://docs.zushealth.com/reference/fhir-search-visionprescription.md): Search for VisionPrescription resources. Search must be scoped to one of the supported parameters. The latest version of each resource is returned.
+- [POST VisionPrescription resource](https://docs.zushealth.com/reference/fhir-post-visionprescription.md): Create a new VisionPrescription resource.
+- [DELETE VisionPrescription resource](https://docs.zushealth.com/reference/fhir-delete-visionprescription.md): Delete a VisionPrescription resource.
+- [GET VisionPrescription by FHIR ID](https://docs.zushealth.com/reference/fhir-get-visionprescription.md): Retrieve a VisionPrescription resource. The latest version of the resource is returned.
+- [PATCH VisionPrescription resource](https://docs.zushealth.com/reference/fhir-patch-visionprescription.md): Update a part of a VisionPrescription resource.
+- [PUT VisionPrescription resource](https://docs.zushealth.com/reference/fhir-put-visionprescription.md): Update an entire VisionPrescription resource with new resource definition.
+- [Create a Backfill Request](https://docs.zushealth.com/reference/createbackfillrequest.md): API endpoint for triggering a backfill of patient data from an EHR. The backfill request pulls data such as patient demographic information and clinical data. The exact content varies by EHR.
+
+## Pages
+- [Contact Support](https://docs.zushealth.com/contact-support.md)
+- [Sign Up](https://docs.zushealth.com/sign-up.md)
+
+## Changelog
+- [Jul 15, 2026: Refreshed sorting and filtering experience in the ZAP](https://docs.zushealth.com/changelog/jul-15-2026-refreshed-sorting-and-filtering-experience-in-the-zap.md)
+- [Jul 10, 2026: New FHIR Relational Schema v2 is here](https://docs.zushealth.com/changelog/jul-10-2026-new-fhir-relational-schema-v2-is-here.md)
+- [Jun 26, 2026: GPS default summary updated with richer clinical context](https://docs.zushealth.com/changelog/jun-26-2026-gps-default-summary-updated-with-richer-clinical-context.md)
+- [June 12, 2026: Return ED visits following an inpatient discharge now create a new Transition of Care](https://docs.zushealth.com/changelog/june-12-2026-return-ed-visits-following-an-inpatient-discharge-now-create-a-new-transition-of-care.md)
+- [June 4, 2026: Improved classification of EHR-sourced encounters](https://docs.zushealth.com/changelog/june-4-2026-improved-classification-of-ehr-sourced-encounters.md)

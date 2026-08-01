@@ -1,0 +1,54 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.zushealth.com/docs/user-authentication
+docs: https://docs.zushealth.com/docs/user-authentication
+summary:
+  types: [oauth2, openIdConnect, http]
+  oauth2_flows: [clientCredentials]
+  http_schemes: [bearer, basic]
+  standard: OAuth 2.0
+  mfa_required: true
+notes: >-
+  Zus secures all API access with OAuth 2.0. Every API request must carry a Bearer access token.
+  Access tokens are valid for 1 hour. Both the FHIR REST API (api.zusapi.com) and the GraphQL FQS
+  API (fqs.zusapi.com) accept the same bearer token.
+schemes:
+- name: m2m-client-credentials
+  type: oauth2
+  flow: clientCredentials
+  description: >-
+    Machine-to-machine App Client for backend services (no human in the loop). An App Client is
+    issued a clientId and clientSecret used to obtain a bearer access token. Client secret can be
+    rotated via the Auth Service API.
+  token_ttl_seconds: 3600
+  rate_limit: 200 token requests per hour per App Client (429 on exceed)
+  docs: https://docs.zushealth.com/docs/m2m-application-setup
+- name: token-exchange
+  type: openIdConnect
+  description: >-
+    Exchange an OIDC-compliant ID token from the customer's own identity provider for a Zus access
+    token, so an application's end users are not required to log in to Zus twice.
+  docs: https://docs.zushealth.com/reference/exchange-token-1
+- name: user-authentication
+  type: http
+  scheme: bearer
+  description: >-
+    Interactive user sign-in (username + password). MFA is required for all Zus accounts and
+    re-verified every 24 hours. Not subject to the M2M token rate limit.
+  sso_providers: [AWS Cognito, Google Workspace, Microsoft Azure Active Directory, Okta]
+  docs: https://docs.zushealth.com/docs/user-authentication
+- name: webhook-auth
+  type: http
+  scheme: basic
+  description: >-
+    Zushooks (outbound webhooks) support Basic (username/password) or OAuth client-credentials
+    authentication against the customer's receiving endpoint (webhookUrl, clientId, clientSecret,
+    tokenUrl, audience).
+  docs: https://docs.zushealth.com/docs/zushooks
+authorization_model:
+  style: role-based
+  docs: https://docs.zushealth.com/docs/roles-and-permissions
+  note: >-
+    Access is governed by roles and permissions plus data-access scoping (data you created, or a
+    patient your organization has a treatment relationship with) rather than OAuth scope strings;
+    no public OAuth scope reference is published, so no scopes/ artifact is emitted.

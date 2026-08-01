@@ -1,0 +1,25 @@
+generated: '2026-07-21'
+method: searched
+source:
+- https://docs.zushealth.com/docs/embedding-the-zap
+- https://docs.zushealth.com/docs/accessing-the-zap
+description: >-
+  Zus ships the Zus Aggregated Profile (ZAP) as an embeddable, prebuilt clinical UI surface that
+  customers drop into their own application to show a patient's aggregated, deduplicated record at
+  the point of care — distinct from the server-side APIs.
+families:
+- name: Zus Aggregated Profile (ZAP)
+  kind: embeddable-clinical-ui
+  docs: https://docs.zushealth.com/docs/embedding-the-zap
+  description: >-
+    Embed the patient's aggregated profile in your application. Includes specialized "Lenses"
+    (condition, encounter, medication, transition-of-care) that summarize and deduplicate data.
+  surfaces:
+  - Standalone Zus App (app.zushealth.com)
+  - Embedded ZAP in customer application
+  lenses:
+  - Condition Lenses
+  - Encounter Lens
+  - Medication Lenses
+  - Transition of Care Lens
+supported_platforms_docs: https://docs.zushealth.com/docs/supported-browsers

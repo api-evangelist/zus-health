@@ -1,22 +1,145 @@
 aid: zus-health
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/zus-health.png
 name: Zus Health
-description: Zus Health is a company surfaced as a portfolio company of a16z and added to the API Evangelist
-  network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Zus Health is a next-generation shared health data platform that brings information speed to
+  healthcare. Its flagship Zus Aggregated Profile (ZAP) consolidates a patient's longitudinal
+  medical record — encounters, conditions, medications, labs, and transitions of care sourced from
+  EHR, pharmacy, ADT, and lab networks plus TEFCA — into a single, deduplicated, FHIR R4-native
+  view accessible via a standalone app, embeddable UI, or API. Zus exposes a FHIR R4 REST API and a
+  read-only FHIR GraphQL Query Service (FQS) over 128 FHIR resource types, an Auth Service for
+  machine-to-machine and user authentication, Patient History APIs for network enrollment and
+  querying, Zushooks event webhooks, and SQL-friendly relational data marts on Snowflake and
+  Databricks. The platform is SOC 2 Type 2 compliant and HIPAA-compliant.
 url: https://raw.githubusercontent.com/api-evangelist/zus-health/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - a16z
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: profiled
+x-tier-reason: enriched-from-public-developer-surface
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
-apis: []
+- Health
+- Healthcare
+- FHIR
+- Interoperability
+- Health Data
+- Patient Records
+- EHR
+- GraphQL
+- Webhooks
+common:
+- type: DeveloperPortal
+  url: https://docs.zushealth.com/docs
+- type: Documentation
+  url: https://docs.zushealth.com/docs/intro-to-zus
+- type: APIReference
+  url: https://docs.zushealth.com/reference/general
+- type: GettingStarted
+  url: https://docs.zushealth.com/docs/getting-started-with-the-zap
+- type: Support
+  url: https://docs.zushealth.com/contact-support
+- type: Blog
+  url: https://zushealth.com/team/blog/
+- type: GitHubOrganization
+  url: https://github.com/zushealth
+- type: SignUp
+  url: https://docs.zushealth.com/page/sign-up
+- type: Login
+  url: https://app.zushealth.com
+- type: TermsOfService
+  url: https://zushealth.com/website-terms-of-use/
+- type: PrivacyPolicy
+  url: https://zushealth.com/website-privacy-policy/
+- type: StatusPage
+  url: https://status.zusapi.com/
+- type: Postman
+  url: https://www.postman.com/zus-health/workspace/zus-health-workspace
+- type: Compliance
+  url: https://zushealth.com/platform/
+- type: LLMsTxt
+  url: llms/zus-health-llms.txt
+- type: Authentication
+  url: authentication/zus-health-authentication.yml
+- type: Conventions
+  url: conventions/zus-health-conventions.yml
+- type: Idempotency
+  url: conventions/zus-health-conventions.yml
+- type: Lifecycle
+  url: lifecycle/zus-health-lifecycle.yml
+- type: Deprecation
+  url: lifecycle/zus-health-lifecycle.yml
+- type: ChangeLog
+  url: changelog/zus-health-changelog.yml
+- type: Webhooks
+  url: asyncapi/zus-health-zushooks.yml
+- type: Conformance
+  url: conformance/zus-health-conformance.yml
+- type: ErrorCatalog
+  url: errors/zus-health-problem-types.yml
+- type: DomainSecurity
+  url: security/zus-health-domain-security.yml
+- type: MCPServer
+  url: mcp/zus-health-mcp.yml
+- type: DataModel
+  url: data-model/zus-health-data-model.yml
+- type: Sandbox
+  url: sandbox/zus-health-sandbox.yml
+- type: Components
+  url: components/zus-health-components.yml
+- type: AgentSkill
+  url: skills/_index.yml
+apis:
+- name: Zus FHIR & Platform API
+  description: >-
+    Zus FHIR R4 REST API plus Auth Service and Patient History APIs. Implements FHIR R4 (v4.0.1)
+    across 128 resource types with instance-level CRUD, transaction Bundles, conditional
+    create/update/delete by identifier, and version-aware writes via the Zus-If-Match ETag header.
+    OAuth 2.0 bearer authentication; machine-to-machine app clients supported.
+  humanURL: https://docs.zushealth.com/docs/fhir-api
+  baseURL: https://api.zusapi.com/fhir
+  properties:
+  - type: APIReference
+    url: https://docs.zushealth.com/reference/general
+  - type: Documentation
+    url: https://docs.zushealth.com/docs/fhir-rest-api-capabilities
+  - type: Conformance
+    url: conformance/zus-health-fhir-capabilitystatement.json
+- name: Zus FHIR GraphQL API (FQS)
+  description: >-
+    The Zus FHIR Query Service (FQS) is a read-only GraphQL API over the FHIR data model, exposed at
+    a single endpoint. Supports UPID-scoped (one-human) and builder-scoped queries across resource
+    types in the Designated Record Set. Uses the same OAuth 2.0 bearer token as the REST API. Beta.
+  humanURL: https://docs.zushealth.com/docs/graphql-api
+  baseURL: https://fqs.zusapi.com/query
+  properties:
+  - type: APIReference
+    url: https://fqs-docs.zusapi.com/
+  - type: Documentation
+    url: https://docs.zushealth.com/docs/graphql-api
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 13
+  pass: local-v1

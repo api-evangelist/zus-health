@@ -1,0 +1,28 @@
+generated: '2026-07-21'
+method: searched
+source:
+- https://docs.zushealth.com/docs/user-authentication
+- https://docs.zushealth.com/docs/m2m-application-setup
+description: >-
+  Zus runs a fully separate sandbox environment from production. Developers authenticate M2M App
+  Clients and exercise the FHIR REST, GraphQL, and Auth APIs in sandbox before promoting to
+  production. Zus provisions credentials per customer account; no self-serve public test tokens or
+  synthetic patient identifiers are published in the docs.
+environments:
+- name: production
+  app: https://app.zushealth.com
+  api: https://api.zusapi.com
+  graphql: https://fqs.zusapi.com/query
+- name: sandbox
+  app: https://app.sandbox.zushealth.com
+  api: null
+  note: >-
+    Sandbox app is publicly named; sandbox API base host is issued to customers on account setup.
+    No published magic/test patient identifiers were found — do not fabricate.
+tooling:
+- name: Postman collection
+  url: https://www.postman.com/zus-health/workspace/zus-health-workspace
+  note: Fork the Zus Postman collection to run M2M setup, obtain an access token, and call the APIs.
+access_tokens:
+  ttl_seconds: 3600
+  note: Sandbox and production tokens are both OAuth 2.0 bearer, valid 1 hour.

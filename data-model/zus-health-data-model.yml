@@ -1,0 +1,88 @@
+generated: '2026-07-21'
+method: derived
+source: >-
+  Derived from the Zus FHIR R4 CapabilityStatement (api.zusapi.com/fhir/metadata, 128 resource
+  types) and FHIR R4 reference semantics. Zus keys clinical resources to a Universal Patient
+  Identifier (UPID) and scopes writes to a Builder (customer org).
+model: fhir-r4
+identity:
+  universal_patient_identifier:
+    name: UPID
+    description: Zus Universal Patient Identifier — one human across all networks; primary scoping key for clinical resources.
+  builder:
+    description: Customer organization that created data; builder-scoped queries return org-created Patient/Practitioner/Organization.
+entities:
+- name: Patient
+  key: FHIR id / upid
+  description: The human whose longitudinal record is aggregated.
+- name: Encounter
+  description: A clinical encounter (inpatient, ED, ambulatory, ADT-sourced).
+- name: Condition
+  description: Diagnosis / problem-list item.
+- name: Observation
+  description: Labs, vitals, and measurements.
+- name: MedicationRequest
+  description: Prescriptions and medication orders.
+- name: MedicationDispense
+  description: Pharmacy fill/pickup events (drives ADT/medication Zushooks).
+- name: AllergyIntolerance
+  description: Allergy and intolerance records.
+- name: DocumentReference
+  description: Ingested clinical documents (CCDA, PDFs).
+- name: Coverage
+  description: Insurance coverage.
+- name: CareTeam
+  description: Practitioners and organizations caring for the patient.
+- name: Organization
+  description: Builder / partner organizations.
+- name: Practitioner
+  description: Clinicians.
+relationships:
+- from: Encounter
+  to: Patient
+  type: belongs_to
+  via: subject (upid)
+- from: Condition
+  to: Patient
+  type: belongs_to
+  via: subject (upid)
+- from: Observation
+  to: Patient
+  type: belongs_to
+  via: subject (upid)
+- from: MedicationRequest
+  to: Patient
+  type: belongs_to
+  via: subject (upid)
+- from: MedicationDispense
+  to: Patient
+  type: belongs_to
+  via: subject (upid)
+- from: AllergyIntolerance
+  to: Patient
+  type: belongs_to
+  via: patient (upid)
+- from: DocumentReference
+  to: Patient
+  type: belongs_to
+  via: subject (upid)
+- from: Coverage
+  to: Patient
+  type: belongs_to
+  via: beneficiary (upid)
+- from: Encounter
+  to: Condition
+  type: has_many
+  via: diagnosis.condition
+- from: CareTeam
+  to: Patient
+  type: belongs_to
+  via: subject (upid)
+- from: Patient
+  to: Organization
+  type: belongs_to
+  via: managingOrganization (builder)
+render: conformance/zus-health-fhir-capabilitystatement.json
+note: >-
+  Full relational rendering of these resources is published by Zus as the FHIR Relational Schema v2
+  (Snowflake/Databricks data marts): docs.zushealth.com/docs/fhir-relational-schema-v2-diagrams.

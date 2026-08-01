@@ -1,0 +1,26 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.zushealth.com/changelog
+versioning:
+  scheme: fhir-version + dated-relational-schema
+  fhir_current: R4 (v4.0.1)
+  data_mart_schema_current: v2
+  docs: https://docs.zushealth.com/docs/fhir-relational-schema-v2-data-dictionary
+deprecation:
+  policy: parallel-support-with-dated-retirement
+  example:
+    subject: FHIR Relational Schema v1
+    announced: '2026-07-10'
+    end_of_support: '2026-10-10'
+    retired: '2026-12-10'
+    migration_guide: https://docs.zushealth.com/docs/fhir-relational-schema-v1-to-v2-migration-guide
+  note: >-
+    Breaking changes ship a new versioned schema; the prior version runs in parallel through a
+    published transition window (support-end and retirement dates announced in the changelog).
+status_page: https://status.zusapi.com/
+sla:
+  url: null
+  note: No public SLA/uptime target page found; status page tracks live availability.
+beta_surfaces:
+- GraphQL FQS API (marked Beta, subject to change)
+deprecated_operations: []

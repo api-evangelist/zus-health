@@ -1,0 +1,48 @@
+generated: '2026-07-21'
+method: derived
+source:
+- https://docs.zushealth.com/docs/fhir-rest-api-capabilities
+- https://docs.zushealth.com/docs/user-authentication
+format: fhir-operationoutcome
+envelope:
+  resourceType: OperationOutcome
+  note: >-
+    Zus returns FHIR R4 OperationOutcome resources on error (issue[].severity, issue[].code,
+    issue[].diagnostics), not RFC 9457 problem+json. Statuses below are derived from documented Zus
+    behavior and FHIR R4 REST semantics.
+problems:
+- status: 400
+  meaning: Bad request
+  cause: >-
+    Malformed request; invalid Bundle (non-transaction type, >100 entries, or multiple writes to a
+    single resource id); invalid conditional-create identifier.
+- status: 401
+  meaning: Unauthorized
+  cause: Missing, invalid, or expired OAuth 2.0 bearer access token (tokens expire after 1 hour).
+- status: 403
+  meaning: Forbidden
+  cause: >-
+    Authenticated but lacking role/permission or no treatment relationship / data-access scope for
+    the requested resource or patient.
+- status: 404
+  meaning: Not found
+  cause: Resource id or resource type does not exist / not visible to the caller.
+- status: 409
+  meaning: Conflict
+  cause: >-
+    Version-aware write failed — the Zus-If-Match ETag did not match the server's current resource
+    version (optimistic concurrency).
+- status: 412
+  meaning: Precondition failed
+  cause: Zus-If-Match precondition not satisfied on a conditional write.
+- status: 422
+  meaning: Unprocessable entity
+  cause: FHIR resource failed validation against the R4 profile / value sets.
+- status: 429
+  meaning: Too many requests
+  cause: >-
+    Token endpoint rate limit exceeded — more than 200 token requests in an hour for a single App
+    Client. Acquire a token and reuse until it expires.
+- status: 500
+  meaning: Internal server error
+  cause: Unexpected server-side error.

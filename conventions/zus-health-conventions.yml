@@ -1,0 +1,58 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.zushealth.com/docs/fhir-rest-api-capabilities
+docs:
+- https://docs.zushealth.com/docs/fhir-rest-api-capabilities
+- https://docs.zushealth.com/reference/general
+- https://docs.zushealth.com/docs/user-authentication
+authentication:
+  style: oauth2-bearer
+  detail: See authentication/zus-health-authentication.yml
+idempotency:
+  supported: true
+  mechanisms:
+  - name: conditional-create-by-identifier
+    description: >-
+      FHIR conditional create/update/delete keyed on a resource identifier ([system]|[value]),
+      passed as a header or query parameter, so repeating a create with the same identifier does
+      not produce duplicate resources.
+    docs: https://docs.zushealth.com/reference/fhir-post-patient
+  - name: version-aware-writes
+    header: Zus-If-Match
+    format: ETag
+    description: >-
+      Optimistic-concurrency writes: PUT/PATCH only apply when the server's current version matches
+      the ETag supplied in the Zus-If-Match header, preventing lost updates on retries.
+    docs: https://docs.zushealth.com/docs/fhir-rest-api-capabilities
+pagination:
+  style: page-based
+  default_page_size: 10
+  max_page_size: 500
+  default_sort: lastUpdated
+  detail: >-
+    GET/search operations are ordered by lastUpdated with pagination by default; page size can be
+    expanded up to 500 resources. FHIR Bundle searchset with link.relation next/self.
+versioning:
+  scheme: fhir-version + relational-schema-version
+  fhir_version: R4 (v4.0.1)
+  data_mart_schema: FHIR Relational Schema v2 (v1 supported in parallel through deprecation window)
+  detail: See lifecycle/zus-health-lifecycle.yml
+bundles:
+  supported: true
+  max_entries: 100
+  types: [transaction]
+  methods: [PUT, POST, DELETE]
+  note: Multiple writes to a single resource id in one Bundle are invalid (400).
+error_envelope:
+  format: fhir-operationoutcome
+  detail: >-
+    Errors are returned as FHIR OperationOutcome resources (not RFC 9457 problem+json). See
+    errors/zus-health-problem-types.yml.
+rate_limiting:
+  token_endpoint: 200 token requests per hour per App Client (429 on exceed)
+  detail: >-
+    Systems are expected to acquire a token and reuse it until it expires (1 hour). Webhook
+    consumers are advised to queue inbound Zushook traffic to self-rate-limit.
+webhooks:
+  product: Zushooks
+  detail: See asyncapi/zus-health-zushooks.yml

@@ -1,0 +1,43 @@
+generated: '2026-07-21'
+method: searched
+source:
+- https://docs.zushealth.com/docs/fhir-rest-api-capabilities
+- https://api.zusapi.com/fhir/metadata
+- https://zushealth.com/platform/
+standards:
+- id: fhir-r4
+  conforms: true
+  evidence: >-
+    FHIR CapabilityStatement at api.zusapi.com/fhir/metadata declares fhirVersion 4.0.1 with 128
+    supported resource types; conformance/zus-health-fhir-capabilitystatement.json captured verbatim.
+- id: oauth2
+  conforms: true
+  evidence: OAuth 2.0 bearer access tokens on all API requests; M2M client-credentials App Clients.
+- id: oidc
+  conforms: true
+  evidence: OIDC-compliant ID-token exchange endpoint issues Zus access tokens (reference/exchange-token-1).
+- id: tefca
+  conforms: true
+  evidence: >-
+    Zus participates in TEFCA data exchange (docs/tefca-concepts, delegation-of-authority,
+    network-requirements).
+- id: hl7-fhir-graphql
+  conforms: true
+  evidence: Read-only FHIR GraphQL Query Service (FQS) at fqs.zusapi.com/query.
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: Errors are returned as FHIR OperationOutcome resources, not application/problem+json.
+- id: scim
+  conforms: false
+- id: hl7-us-core
+  conforms: unknown
+  evidence: US Core profile support not explicitly asserted in captured docs.
+compliance_program:
+  soc2_type2: true
+  hipaa: true
+  aicpa_badge: true
+  source: https://zushealth.com/platform/
+  note: >-
+    "We are proud to be SOC 2 Type 2 compliant" and "All Zus products are built on top of a
+    HIPAA-compliant FHIR-native data store" — published on the Zus platform page. No public
+    trust-center subdomain or standalone security page was reachable at probe time.

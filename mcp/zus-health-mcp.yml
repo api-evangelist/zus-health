@@ -1,0 +1,49 @@
+generated: '2026-07-21'
+method: derived
+status: candidate
+source: >-
+  Derived from Zus FHIR REST API reference operations (docs.zushealth.com/reference) and the FHIR
+  R4 CapabilityStatement (api.zusapi.com/fhir/metadata). No official hosted Zus MCP server was found
+  at probe time.
+server:
+  name: zus-health
+  transport: http
+  url: null
+  auth: OAuth 2.0 bearer (M2M App Client client-credentials); see authentication/zus-health-authentication.yml
+tools:
+- name: exchange_token
+  description: Exchange an OIDC ID token from the caller's IdP for a Zus access token
+  source_operation: https://docs.zushealth.com/reference/exchange-token-1
+- name: create_app_client
+  description: Create an M2M app client for backend API access
+  source_operation: https://docs.zushealth.com/reference/create-app-client
+- name: search_patient
+  description: Search Patient resources scoped to a supported parameter (e.g. upid)
+  source_operation: https://docs.zushealth.com/reference/fhir-search-patient
+- name: get_patient
+  description: Retrieve a Patient resource by FHIR id
+  source_operation: https://docs.zushealth.com/reference/fhir-get-patient
+- name: create_patient
+  description: Create a Patient resource (conditional-create by identifier supported)
+  source_operation: https://docs.zushealth.com/reference/fhir-post-patient
+- name: search_condition
+  description: Search Condition resources for one UPID
+  source_operation: https://docs.zushealth.com/reference/fhir-search-condition
+- name: search_encounter
+  description: Search Encounter resources for one UPID
+  source_operation: https://docs.zushealth.com/reference/fhir-search-encounter
+- name: search_medicationrequest
+  description: Search MedicationRequest resources for one UPID
+  source_operation: https://docs.zushealth.com/reference/fhir-search-medicationrequest
+- name: search_observation
+  description: Search Observation resources for one UPID
+  source_operation: https://docs.zushealth.com/reference/fhir-search-observation
+- name: search_documentreference
+  description: Search DocumentReference resources for one UPID
+  source_operation: https://docs.zushealth.com/reference/fhir-search-documentreference
+- name: graphql_query
+  description: Run a read-only FHIR GraphQL (FQS) query, UPID- or builder-scoped
+  source_operation: https://fqs.zusapi.com/query
+note: >-
+  Candidate tool surface only — generalizes over 128 FHIR R4 resource types that each support
+  read / search-type / create / update / patch / delete, plus system-level transaction Bundles.

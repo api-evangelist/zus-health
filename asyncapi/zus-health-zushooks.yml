@@ -1,0 +1,35 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.zushealth.com/docs/zushooks
+spec_type: Webhooks
+product: Zushooks
+description: >-
+  Zushooks are user-defined outbound HTTPS callbacks. Zus sends a POST to a customer-configured
+  webhookUrl when a FHIR resource is created or updated that matches a subscribed filter, so
+  consumers do not have to poll the FHIR Store. The customer must respond 200 OK to acknowledge.
+transport: https-post
+configuration: Configured per account via Zus support ticket (webhookUrl + filter + auth method).
+filters:
+  language: JQ
+  docs: https://jqlang.github.io/jq/manual/
+  examples:
+  - Contains / does not contain a value such as a patient identifier system
+  - Resource updated to a completed status (e.g. Appointments, Encounters)
+  - Resource originates from a data type such as ADT or Medication Alerts
+authentication:
+  methods: [basic, oauth-client-credentials]
+  oauth_values: [webhookUrl, clientId, clientSecret, tokenUrl, audience]
+event_categories:
+- Patient admitted, discharged, or transferred (ADT) from an inpatient encounter
+- Medication prescribed or picked up
+- New lab result available
+- Any FHIR resource create/update matching the configured filter
+payload:
+  source: com.zushealth.zushooks
+  fields: [message_id, source, time, resourceId, ownerId, upid, resourceIncluded, resource]
+  note: >-
+    When secured with OAuth the entire FHIR resource is included in the response body; example
+    resourceId form "Encounter/<uuid>", upid identifies the human (Universal Patient Identifier).
+consumer_guidance: >-
+  Zus recommends directing Zushooks to a queue to enforce rate limiting and avoid overwhelming
+  downstream services given variable data traffic.

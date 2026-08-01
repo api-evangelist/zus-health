@@ -1,0 +1,31 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.zushealth.com/changelog
+scheme: dated
+current_version: FHIR Relational Schema v2
+entries:
+- date: '2026-07-15'
+  title: Refreshed sorting and filtering experience in the ZAP
+  breaking: false
+  url: https://docs.zushealth.com/changelog/jul-15-2026-refreshed-sorting-and-filtering-experience-in-the-zap
+- date: '2026-07-10'
+  title: New FHIR Relational Schema v2 is here
+  breaking: true
+  highlights:
+  - Every table now has a unique id column; duplicate rows near-zero
+  - Available via Snowflake listing in any US region (v1 was AWS us-east/us-west only)
+  - Foreign data (contact points, identifiers, names, dosages) folded into resource tables to cut joins
+  - v1 end-of-support 2026-10-10, retired 2026-12-10
+  url: https://docs.zushealth.com/changelog/jul-10-2026-new-fhir-relational-schema-v2-is-here
+- date: '2026-06-26'
+  title: GPS default summary updated with richer clinical context
+  breaking: false
+  url: https://docs.zushealth.com/changelog/jun-26-2026-gps-default-summary-updated-with-richer-clinical-context
+- date: '2026-06-12'
+  title: Return ED visits following an inpatient discharge now create a new Transition of Care
+  breaking: false
+  url: https://docs.zushealth.com/changelog/june-12-2026-return-ed-visits-following-an-inpatient-discharge-now-create-a-new-transition-of-care
+- date: '2026-06-04'
+  title: Improved classification of EHR-sourced encounters
+  breaking: false
+  url: https://docs.zushealth.com/changelog/june-4-2026-improved-classification-of-ehr-sourced-encounters

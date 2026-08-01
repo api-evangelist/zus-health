@@ -1,0 +1,19 @@
+generated: '2026-07-21'
+method: generated
+source: >-
+  Generated from Zus FHIR REST/GraphQL API reference (docs.zushealth.com/reference) and the FHIR R4
+  CapabilityStatement. Every step is grounded in a real Zus reference operation or FHIR interaction.
+api: conformance/zus-health-fhir-capabilitystatement.json
+skills:
+- file: zus-health-authenticate-m2m.md
+  name: Authenticate a backend service to the Zus API
+  api: authentication/zus-health-authentication.yml
+  operations: [create-app-client, exchange-token-1]
+- file: zus-health-enroll-and-query-patient.md
+  name: Create a patient and query their aggregated record
+  api: conformance/zus-health-fhir-capabilitystatement.json
+  operations: [fhir-post-patient, fhir-search-patient, fhir-search-condition, fhir-search-encounter]
+- file: zus-health-graphql-patient-summary.md
+  name: Read a patient summary via the FHIR GraphQL (FQS) API
+  api: conformance/zus-health-fhir-capabilitystatement.json
+  operations: [graphql-query]

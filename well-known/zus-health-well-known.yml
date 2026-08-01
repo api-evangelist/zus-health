@@ -1,0 +1,27 @@
+generated: '2026-07-21'
+method: searched
+source: live probes of /.well-known/ on Zus hosts
+note: >-
+  No /.well-known/ discovery documents were served (all 404). Zus instead publishes a FHIR
+  CapabilityStatement (the FHIR-native discovery surface) at api.zusapi.com/fhir/metadata, captured
+  in conformance/zus-health-fhir-capabilitystatement.json.
+hosts:
+- host: https://zushealth.com
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+- host: https://api.zusapi.com
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+fhir_discovery:
+  path: /fhir/metadata
+  host: https://api.zusapi.com
+  status: 200
+  file: ../conformance/zus-health-fhir-capabilitystatement.json
